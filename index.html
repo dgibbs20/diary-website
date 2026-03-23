@@ -280,20 +280,24 @@ footer {
 <body>
 
 <!-- SPLASH SCREEN -->
-<div id="splash" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#F5F0E8;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 1s ease;">
-  <iframe id="splash-video" 
-    src="https://www.youtube.com/embed/JUAqDFFkI8g?autoplay=1&mute=0&controls=0&loop=1&showinfo=0&rel=0&modestbranding=1&playsinline=1" 
-    style="width:100%;height:100%;max-width:420px;border:none;border-radius:0;" 
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-  </iframe>
+<div id="splash" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#F5F0E8;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity 1.2s ease;">
+  <audio id="notify-sound" src="notify.wav" preload="auto"></audio>
+  <img src="logo-transparent2.png" alt="diAry" style="height:280px;animation:splashPulse 1s ease-in-out infinite alternate;filter:drop-shadow(0 8px 32px rgba(201,168,76,0.4));">
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:#8B6347;letter-spacing:0.08em;animation:fadeUp 1s ease 0.5s both;">"I'll never tell."</p>
 </div>
+<style>
+@keyframes splashPulse { from { transform: scale(1); } to { transform: scale(1.04); } }
+</style>
 <script>
-  setTimeout(function() {
-    var splash = document.getElementById('splash');
-    splash.style.opacity = '0';
-    setTimeout(function() { splash.style.display = 'none'; }, 1000);
-  }, 7100);
+  window.addEventListener('load', function() {
+    var sound = document.getElementById('notify-sound');
+    sound.play().catch(function() {});
+    setTimeout(function() {
+      var splash = document.getElementById('splash');
+      splash.style.opacity = '0';
+      setTimeout(function() { splash.style.display = 'none'; }, 1200);
+    }, 3500);
+  });
 </script>
   
 <nav>
