@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>diAry — I'll never tell.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7D9;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A8863A;
+  --gold-pale: rgba(201,168,76,0.12);
+  --brown: #2C1A0E;
+  --brown-mid: #5C3D2A;
+  --brown-light: #8B6347;
+  --white: #FDFAF4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-size: 1.9rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brown-mid); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--cream) !important; padding: 8px 20px; border-radius: 40px;
+}
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 100px 5% 80px;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 28px;
+  animation: fadeUp 0.9s ease 0.1s both;
+}
+.hero-logo {
+  font-size: clamp(5.5rem, 14vw, 11rem);
+  font-weight: 300; font-style: italic; line-height: 1;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 45%, var(--gold) 65%, var(--gold-dark) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: fadeUp 0.9s ease 0.25s both;
+}
+.hero-tagline {
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-style: italic; font-weight: 300; color: var(--brown-mid);
+  margin-bottom: 20px; letter-spacing: 0.04em;
+  animation: fadeUp 0.9s ease 0.4s both;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--brown-light); max-width: 560px; margin: 0 auto 48px;
+  font-weight: 300;
+  animation: fadeUp 0.9s ease 0.55s both;
+}
+.hero-btns {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.9s ease 0.7s both;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--cream); padding: 14px 36px; border-radius: 50px;
+  font-family: 'Cormorant Garamond', serif; font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(168,134,58,0.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(168,134,58,0.4); }
+.btn-secondary {
+  border: 1px solid var(--gold); color: var(--gold-dark); padding: 14px 36px;
+  border-radius: 50px; font-family: 'Cormorant Garamond', serif; font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-secondary:hover { background: var(--gold-pale); }
+.hero-divider {
+  margin-top: 80px; width: 1px; height: 70px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: fadeUp 0.9s ease 0.9s both;
+}
+section { padding: 100px 5%; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300; font-style: italic; line-height: 1.15;
+  color: var(--brown); margin-bottom: 20px;
+}
+.section-sub {
+  font-size: 1.05rem; color: var(--brown-light); max-width: 560px;
+  font-weight: 300; margin-bottom: 60px;
+}
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 48px;
+}
+#screenshots { background: var(--cream-dark); }
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px; max-width: 1100px; margin: 0 auto;
+}
+.screenshot-card {
+  background: var(--white); border-radius: 20px;
+  overflow: hidden; border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: 0 8px 32px rgba(44,26,14,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.screenshot-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(44,26,14,0.14); }
+.screen-preview { padding: 20px; min-height: 220px; background: var(--cream); }
+.screenshot-label {
+  padding: 12px 16px; font-size: 0.78rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--brown-light);
+  text-align: center; border-top: 1px solid rgba(201,168,76,0.15);
+  background: var(--white);
+}
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px; max-width: 1200px;
+}
+.feature-card {
+  background: var(--white); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 16px; padding: 36px 32px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,26,14,0.1); }
+.feature-icon {
+  width: 52px; height: 52px;
+  background: var(--gold-pale); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 18px;
+}
+.feature-title { font-size: 1.25rem; font-weight: 500; font-style: italic; color: var(--brown); margin-bottom: 10px; }
+.feature-desc { font-size: 0.95rem; color: var(--brown-light); font-weight: 300; line-height: 1.75; }
+#how-it-works { background: var(--cream-dark); }
+.steps { display: flex; flex-direction: column; gap: 0; max-width: 720px; }
+.step { display: flex; gap: 28px; align-items: flex-start; padding: 36px 0; position: relative; }
+.step:not(:last-child)::after {
+  content: ''; position: absolute; left: 23px; top: 80px;
+  width: 1px; height: calc(100% - 50px);
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.step-num {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-style: italic; color: var(--gold); font-weight: 300;
+  background: var(--cream-dark);
+}
+.step-title { font-size: 1.3rem; font-style: italic; font-weight: 500; color: var(--brown); margin-bottom: 8px; }
+.step-desc { font-size: 0.97rem; color: var(--brown-light); font-weight: 300; line-height: 1.75; }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 800px; }
+.video-wrap {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.2);
+  background: var(--brown);
+  aspect-ratio: 9/16;
+}
+.video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.video-label { text-align: center; margin-top: 16px; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown-light); }
+#download { background: var(--cream-dark); text-align: center; }
+.download-cards { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 60px; }
+.download-card {
+  background: var(--white); border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 20px; padding: 48px 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+  min-width: 260px; transition: transform 0.3s, box-shadow 0.3s;
+}
+.download-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(44,26,14,0.12); }
+.store-name { font-size: 1.1rem; font-style: italic; font-weight: 500; color: var(--brown); }
+.store-sub { font-size: 0.82rem; color: var(--brown-light); letter-spacing: 0.08em; text-transform: uppercase; }
+.qr-placeholder {
+  width: 140px; height: 140px; border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  background: var(--cream); flex-direction: column; gap: 8px;
+}
+.download-btn {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--cream); padding: 12px 28px; border-radius: 50px;
+  font-family: 'Cormorant Garamond', serif; font-size: 0.82rem;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  transition: opacity 0.2s; display: inline-block; text-align: center;
+}
+.download-btn:hover { opacity: 0.85; }
+.coming-soon-badge {
+  background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-dark); padding: 6px 16px; border-radius: 40px;
+  font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1000px; }
+.pricing-card {
+  background: var(--white); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 16px; padding: 36px 28px;
+  transition: transform 0.3s;
+}
+.pricing-card.featured { border: 2px solid var(--gold); box-shadow: 0 8px 40px rgba(201,168,76,0.2); }
+.pricing-card:hover { transform: translateY(-4px); }
+.pricing-tier { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.pricing-name { font-size: 1.5rem; font-style: italic; font-weight: 500; color: var(--brown); margin-bottom: 4px; }
+.pricing-price { font-size: 2rem; font-weight: 300; color: var(--brown); margin: 16px 0; }
+.pricing-price span { font-size: 0.9rem; color: var(--brown-light); }
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+.pricing-features li { font-size: 0.92rem; color: var(--brown-mid); display: flex; gap: 10px; align-items: flex-start; }
+.pricing-features li::before { content: '✦'; color: var(--gold); font-size: 0.6rem; margin-top: 6px; flex-shrink: 0; }
+#privacy-section { max-width: 780px; }
+#privacy-section h3 { font-size: 1.2rem; font-style: italic; font-weight: 500; color: var(--brown); margin: 32px 0 12px; }
+#privacy-section p, #privacy-section li { font-size: 0.97rem; color: var(--brown-mid); font-weight: 300; line-height: 1.8; margin-bottom: 12px; }
+#privacy-section ul { padding-left: 20px; margin-bottom: 16px; }
+#contact { background: var(--cream-dark); text-align: center; }
+.contact-box {
+  max-width: 560px; margin: 0 auto;
+  background: var(--white); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 20px; padding: 56px 48px;
+}
+footer {
+  background: var(--brown); color: rgba(245,240,232,0.6);
+  padding: 48px 5%; text-align: center;
+}
+.footer-logo {
+  font-size: 2rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px; display: block;
+}
+.footer-tagline { font-size: 0.9rem; font-style: italic; color: rgba(245,240,232,0.5); margin-bottom: 32px; }
+.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 72px 5%; }
+  .contact-box { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">diAry</a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#download" class="nav-cta">Download</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <p class="hero-tag">The AI-Powered Private Journal</p>
+  <h1 class="hero-logo">diAry</h1>
+  <p class="hero-tagline">"I'll never tell."</p>
+  <p class="hero-sub">Your thoughts deserve a space that truly understands them. Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever.</p>
+  <div class="hero-btns">
+    <a href="#download" class="btn-primary">Download Now</a>
+    <a href="#features" class="btn-secondary">Explore Features</a>
+  </div>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section id="screenshots">
+  <div class="reveal">
+    <span class="section-tag">Inside the App</span>
+    <h2 class="section-title">Designed for<br>your most private moments</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="screenshots-grid reveal">
+
+    <div class="screenshot-card">
+      <div class="screen-preview" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+        <div style="font-size:2.2rem;font-style:italic;font-weight:300;background:linear-gradient(135deg,#A8863A,#E2C97E,#A8863A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">diAry</div>
+        <div style="font-size:0.9rem;color:#5C3D2A;font-style:italic;">Welcome Back</div>
+        <div style="width:85%;height:38px;border-radius:22px;background:rgba(201,168,76,0.13);border:1px solid rgba(201,168,76,0.3);"></div>
+        <div style="width:85%;height:38px;border-radius:22px;background:rgba(201,168,76,0.13);border:1px solid rgba(201,168,76,0.3);"></div>
+        <div style="width:85%;height:42px;border-radius:24px;background:linear-gradient(135deg,#A8863A,#C9A84C);"></div>
+        <div style="font-size:0.7rem;color:#8B6347;">Don't have an account? <span style="color:#A8863A;text-decoration:underline;">Sign Up</span></div>
+      </div>
+      <div class="screenshot-label">Login</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview">
+        <div style="font-size:1.8rem;font-style:italic;font-weight:300;text-align:center;background:linear-gradient(135deg,#A8863A,#E2C97E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;">diAry</div>
+        <div style="font-size:0.75rem;color:#8B6347;margin-bottom:2px;">Tue, 17 Mar 2026</div>
+        <div style="font-size:0.88rem;font-style:italic;color:#2C1A0E;margin-bottom:10px;">Hi, diAry Reviewer</div>
+        <div style="background:rgba(201,168,76,0.1);border-radius:16px;padding:7px 12px;margin-bottom:10px;font-size:0.72rem;color:#8B6347;">🔍 Search here...</div>
+        <div style="display:flex;gap:6px;margin-bottom:10px;">
+          <div style="background:linear-gradient(135deg,#A8863A,#C9A84C);border-radius:20px;padding:5px 12px;font-size:0.68rem;color:#F5F0E8;">All</div>
+          <div style="background:rgba(201,168,76,0.1);border-radius:20px;padding:5px 12px;font-size:0.68rem;color:#8B6347;">Text</div>
+          <div style="background:rgba(201,168,76,0.1);border-radius:20px;padding:5px 12px;font-size:0.68rem;color:#8B6347;">Voice</div>
+        </div>
+        <div style="background:white;border-radius:12px;padding:12px;border:1px solid rgba(201,168,76,0.2);">
+          <div style="font-size:0.82rem;font-style:italic;color:#2C1A0E;margin-bottom:3px;">Today was a good day.</div>
+          <div style="font-size:0.68rem;color:#8B6347;line-height:1.5;">I had an amazing day today. After work, I met friends for a drink...</div>
+          <div style="font-size:0.65rem;color:#A8863A;margin-top:6px;">Tue 17 Mar, 2026</div>
+        </div>
+      </div>
+      <div class="screenshot-label">Home Dashboard</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+        <div style="font-size:1.8rem;font-style:italic;font-weight:300;text-align:center;background:linear-gradient(135deg,#A8863A,#E2C97E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">diAry</div>
+        <div style="font-size:0.82rem;font-weight:500;color:#5C3D2A;align-self:flex-start;">Voice Journal</div>
+        <div style="font-size:0.72rem;color:#A8863A;">00:00</div>
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#A8863A,#C9A84C);display:flex;align-items:center;justify-content:center;font-size:1.6rem;">🎙</div>
+        <div style="font-size:0.72rem;color:#8B6347;letter-spacing:0.08em;">Tap to Speak</div>
+        <div style="width:100%;border-radius:10px;border:1px solid rgba(201,168,76,0.25);padding:10px;background:white;">
+          <div style="font-size:0.72rem;font-weight:500;color:#5C3D2A;margin-bottom:3px;">AI Transcription</div>
+          <div style="font-size:0.65rem;color:#8B6347;">Your transcription will appear here after you finish recording.</div>
+        </div>
+      </div>
+      <div class="screenshot-label">Voice Journal</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview">
+        <div style="font-size:1.8rem;font-style:italic;font-weight:300;text-align:center;background:linear-gradient(135deg,#A8863A,#E2C97E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;">diAry</div>
+        <div style="font-size:0.82rem;font-weight:500;color:#5C3D2A;margin-bottom:6px;">Text Journal</div>
+        <div style="font-size:1rem;font-style:italic;color:#2C1A0E;margin-bottom:8px;">Today was a good day.</div>
+        <div style="font-size:0.8rem;color:#5C3D2A;line-height:2;border-bottom:1px solid rgba(201,168,76,0.2);">I had an amazing day today.</div>
+        <div style="height:1px;background:rgba(201,168,76,0.15);margin-top:12px;"></div>
+        <div style="height:1px;background:rgba(201,168,76,0.15);margin-top:12px;"></div>
+        <div style="height:1px;background:rgba(201,168,76,0.15);margin-top:12px;"></div>
+        <div style="height:1px;background:rgba(201,168,76,0.15);margin-top:12px;"></div>
+        <div style="height:1px;background:rgba(201,168,76,0.15);margin-top:12px;"></div>
+      </div>
+      <div class="screenshot-label">Text Journal</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview">
+        <div style="font-size:0.88rem;font-weight:500;color:#5C3D2A;text-align:center;margin-bottom:2px;">AI Companion</div>
+        <div style="font-size:0.68rem;color:#8B6347;text-align:center;font-style:italic;margin-bottom:14px;">Reflect on your thoughts</div>
+        <div style="background:white;border-radius:12px;padding:12px;border:1px solid rgba(201,168,76,0.2);margin-bottom:12px;">
+          <div style="font-size:0.78rem;color:#2C1A0E;line-height:1.65;">Okay, I read it! Sounds like such a good day honestly — good drinks, good people, good vibes, and now you've got a little Cabo trip to potentially plan? That's exciting! 🌴</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <div style="flex:1;height:34px;border-radius:20px;border:1px solid rgba(201,168,76,0.25);background:white;padding:0 12px;display:flex;align-items:center;">
+            <span style="font-size:0.68rem;color:#C9A84C;">Share your thoughts...</span>
+          </div>
+          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#A8863A,#C9A84C);display:flex;align-items:center;justify-content:center;color:white;font-size:0.8rem;">▶</div>
+        </div>
+      </div>
+      <div class="screenshot-label">AI Companion</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview">
+        <div style="font-size:0.88rem;font-weight:500;color:#5C3D2A;margin-bottom:12px;">How's your mood today?</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:rgba(201,168,76,0.12);border-radius:10px;padding:10px;text-align:center;border:2px solid rgba(201,168,76,0.35);">
+            <div style="font-size:1.3rem;">😊</div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Happy</div>
+          </div>
+          <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:10px;text-align:center;">
+            <div style="font-size:1.3rem;">😴</div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Sleepy</div>
+          </div>
+          <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:10px;text-align:center;">
+            <div style="font-size:1.3rem;">😔</div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Sad</div>
+          </div>
+          <div style="background:rgba(201,168,76,0.08);border-radius:10px;padding:10px;text-align:center;">
+            <div style="font-size:1.3rem;">😠</div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Angry</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;height:36px;border-radius:24px;background:linear-gradient(135deg,#A8863A,#C9A84C);display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F5F0E8;font-size:0.75rem;letter-spacing:0.1em;">Continue</span>
+        </div>
+      </div>
+      <div class="screenshot-label">Mood Check-In</div>
+    </div>
+
+    <div class="screenshot-card">
+      <div class="screen-preview">
+        <div style="font-size:0.82rem;font-weight:500;color:#5C3D2A;margin-bottom:3px;">Create New Page</div>
+        <div style="font-size:0.68rem;color:#8B6347;margin-bottom:12px;">Select page style and insert it</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:white;border-radius:8px;padding:12px 8px;border:2px solid rgba(201,168,76,0.4);text-align:center;">
+            <div style="height:32px;background:#f8f8f8;border-radius:4px;margin-bottom:4px;"></div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Plain Page</div>
+          </div>
+          <div style="background:white;border-radius:8px;padding:12px 8px;border:1px solid rgba(201,168,76,0.2);text-align:center;">
+            <div style="height:32px;background:#f8f8f8;border-radius:4px;margin-bottom:4px;display:flex;flex-direction:column;justify-content:space-around;padding:3px;"><div style="height:1px;background:#ddd;"></div><div style="height:1px;background:#ddd;"></div><div style="height:1px;background:#ddd;"></div></div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Line Page</div>
+          </div>
+          <div style="background:white;border-radius:8px;padding:12px 8px;border:1px solid rgba(201,168,76,0.2);text-align:center;">
+            <div style="height:32px;background:#e8dcc8;border-radius:4px;margin-bottom:4px;"></div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Old Page</div>
+          </div>
+          <div style="background:white;border-radius:8px;padding:12px 8px;border:1px solid rgba(201,168,76,0.2);text-align:center;">
+            <div style="height:32px;background:#f8f8f8;border-radius:4px;margin-bottom:4px;background-image:repeating-linear-gradient(0deg,transparent,transparent 7px,#ddd 7px,#ddd 8px),repeating-linear-gradient(90deg,transparent,transparent 7px,#ddd 7px,#ddd 8px);"></div>
+            <div style="font-size:0.65rem;color:#5C3D2A;">Grid Page</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;height:34px;border-radius:22px;background:linear-gradient(135deg,#A8863A,#C9A84C);display:flex;align-items:center;justify-content:center;">
+          <span style="color:#F5F0E8;font-size:0.72rem;letter-spacing:0.1em;">Insert Page</span>
+        </div>
+      </div>
+      <div class="screenshot-label">Page Styles</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="reveal">
+    <span class="section-tag">What Makes diAry Different</span>
+    <h2 class="section-title">Every feature built<br>around your privacy</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-icon">✍️</div>
+      <h3 class="feature-title">Text Journaling</h3>
+      <p class="feature-desc">Write freely on beautiful lined pages with elegant Cormorant Garamond typography. Auto-save ensures no thought is ever lost.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎙️</div>
+      <h3 class="feature-title">Voice Journaling</h3>
+      <p class="feature-desc">Tap to speak and your words are transcribed instantly using AI. Journal while walking, commuting, or anywhere life takes you.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✏️</div>
+      <h3 class="feature-title">Handwriting Recognition</h3>
+      <p class="feature-desc">Write or draw by hand and watch your words convert to text through advanced OCR. Multiple page styles — plain, lined, grid, and vintage parchment.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3 class="feature-title">AI Companion</h3>
+      <p class="feature-desc">Powered by Claude AI, your companion reads your entries and responds with genuine warmth, reflection, or insight — depending on your chosen mode.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎭</div>
+      <h3 class="feature-title">Four AI Modes</h3>
+      <p class="feature-desc">Friend mode for warm support, Mirror mode for therapeutic reflection, Insight mode for deeper analysis, or Auto mode to let diAry read your energy and respond accordingly.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">😊</div>
+      <h3 class="feature-title">Mood Tracking</h3>
+      <p class="feature-desc">Log your emotional state daily with our mood check-in. Track patterns over time with beautiful analytics and deeply personal insights.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👻</div>
+      <h3 class="feature-title">Ghost Mode</h3>
+      <p class="feature-desc">Screenshot blocking, screen recording prevention, and automatic locking after inactivity. Your most private entries stay completely invisible to the outside world.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔥</div>
+      <h3 class="feature-title">Burn Mode</h3>
+      <p class="feature-desc">Set entries to self-destruct after a chosen time period or number of reads. Process difficult emotions freely — then let them go permanently and securely.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📷</div>
+      <h3 class="feature-title">ICE Cam Security</h3>
+      <p class="feature-desc">Unauthorized access attempts are automatically captured, timestamped, and geotagged. Your diary protects itself and alerts you to any intrusion attempts.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔐</div>
+      <h3 class="feature-title">Biometric Lock</h3>
+      <p class="feature-desc">Face ID and fingerprint authentication ensure only you can access your most personal thoughts. Military-grade security for everyday peace of mind.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3 class="feature-title">Analytics & Insights</h3>
+      <p class="feature-desc">Visualize your emotional journey over time. Identify patterns, track writing streaks, and celebrate your growth with beautiful personal dashboards.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3 class="feature-title">Secure Cloud Sync</h3>
+      <p class="feature-desc">Your entries are encrypted and synced across all your devices. Access your journal anywhere — while keeping your data completely and absolutely private.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="reveal">
+    <span class="section-tag">Getting Started</span>
+    <h2 class="section-title">Up and writing<br>in minutes</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3 class="step-title">Download & Create Your Account</h3>
+        <p class="step-desc">Download diAry from the Google Play Store. Create your account using your email address. You'll receive a verification code to confirm your identity — this is how we keep your journal private and secure from the very first moment.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3 class="step-title">Set Your Mood & Security Preferences</h3>
+        <p class="step-desc">Each time you open diAry, a mood check-in greets you. Select how you're feeling — Happy, Sad, Bored, Romantic, Naughty, Angry, Sleepy, or Sick. Then configure your biometric lock and privacy settings to your comfort level.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3 class="step-title">Choose Your Journal Type</h3>
+        <p class="step-desc">Tap the + button to create a new entry. Choose between Text Journal (classic lined paper experience), Voice Journal (tap to speak), or Handwritten Journal (write or draw by hand). Each type captures your thoughts in the way that feels most natural.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3 class="step-title">Write Your Entry</h3>
+        <p class="step-desc">Express yourself freely. For text, type on the beautiful lined page. For voice, tap the gold microphone and speak — your words transcribe automatically. For handwriting, select your page style and write or draw naturally using any stylus or finger.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3 class="step-title">Let Your AI Companion Respond</h3>
+        <p class="step-desc">After saving your entry, tap the AI Companion button. Choose Friend mode for emotional support, Mirror mode for therapeutic reflection, Insight mode for deeper analysis, or Auto to let diAry read your energy and respond accordingly. Your companion is always listening.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h3 class="step-title">Use Ghost Mode & Burn Mode</h3>
+        <p class="step-desc">For sensitive entries, enable Ghost Mode to block screenshots and auto-lock the app. Toggle Burn Mode before saving to set an entry to self-destruct after a chosen time period. Your most private moments can be expressed, processed, and released — permanently.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h3 class="step-title">Track Your Emotional Journey</h3>
+        <p class="step-desc">Visit the Analytics tab to view your mood trends over time, writing streaks, and emotional patterns. The more you journal, the richer your personal insights become. diAry learns with you and grows alongside your journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="videos">
+  <div class="reveal">
+    <span class="section-tag">See diAry in Action</span>
+    <h2 class="section-title">Feel the experience<br>before you download</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="video-grid reveal">
+    <div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/1XIniwwBzRk" title="diAry Official Preview" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      </div>
+      <p class="video-label">diAry — Official Preview</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="reveal">
+    <span class="section-tag">Plans & Pricing</span>
+    <h2 class="section-title">Your secrets deserve<br>the right protection</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="pricing-grid reveal">
+    <div class="pricing-card">
+      <p class="pricing-tier">Free Forever</p>
+      <h3 class="pricing-name">diAry</h3>
+      <div class="pricing-price">$0 <span>/ forever</span></div>
+      <ul class="pricing-features">
+        <li>Unlimited journal entries</li>
+        <li>Text, voice & handwriting input</li>
+        <li>5 AI Companion responses per day</li>
+        <li>3 voice transcriptions per day</li>
+        <li>Basic mood tracking</li>
+        <li>Biometric lock</li>
+      </ul>
+    </div>
+    <div class="pricing-card featured">
+      <p class="pricing-tier">Most Popular</p>
+      <h3 class="pricing-name">diAry Elite</h3>
+      <div class="pricing-price">$9.99 <span>/ month</span></div>
+      <ul class="pricing-features">
+        <li>Everything in Free</li>
+        <li>Unlimited AI Companion responses</li>
+        <li>All four AI modes unlocked</li>
+        <li>Unlimited voice transcription</li>
+        <li>Ghost Mode & Burn Mode</li>
+        <li>ICE Cam Security System</li>
+        <li>Advanced analytics & insights</li>
+        <li>Export functionality</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#download" class="download-btn" style="margin-top:16px;">Get Elite</a>
+    </div>
+    <div class="pricing-card">
+      <p class="pricing-tier">Best Value</p>
+      <h3 class="pricing-name">diAry Elite Annual</h3>
+      <div class="pricing-price">$79.99 <span>/ year</span></div>
+      <ul class="pricing-features">
+        <li>Everything in Elite Monthly</li>
+        <li>Save over 33%</li>
+        <li>Early access to new features</li>
+        <li>Priority customer support</li>
+      </ul>
+      <a href="#download" class="download-btn" style="margin-top:16px;">Get Annual</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section id="download">
+  <div class="reveal">
+    <span class="section-tag">Get the App</span>
+    <h2 class="section-title">Your journal is<br>waiting for you</h2>
+    <p class="section-sub">Download diAry today and begin the most intimate conversation you've ever had — with yourself.</p>
+  </div>
+  <div class="download-cards reveal">
+    <div class="download-card">
+      <div style="font-size:2.2rem;">▶</div>
+      <div class="store-name">Google Play</div>
+      <div class="store-sub">Android</div>
+      <div class="qr-placeholder">
+        <div style="font-size:0.72rem;color:#A8863A;letter-spacing:0.08em;text-align:center;">Scan to Download</div>
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#F5F0E8"/>
+          <rect x="8" y="8" width="36" height="36" fill="none" stroke="#C9A84C" stroke-width="2.5"/>
+          <rect x="13" y="13" width="10" height="10" fill="#C9A84C"/>
+          <rect x="25" y="13" width="10" height="10" fill="#C9A84C"/>
+          <rect x="13" y="25" width="10" height="10" fill="#C9A84C"/>
+          <rect x="56" y="8" width="36" height="36" fill="none" stroke="#C9A84C" stroke-width="2.5"/>
+          <rect x="61" y="13" width="10" height="10" fill="#C9A84C"/>
+          <rect x="73" y="13" width="10" height="10" fill="#C9A84C"/>
+          <rect x="61" y="25" width="10" height="10" fill="#C9A84C"/>
+          <rect x="8" y="56" width="36" height="36" fill="none" stroke="#C9A84C" stroke-width="2.5"/>
+          <rect x="13" y="61" width="10" height="10" fill="#C9A84C"/>
+          <rect x="25" y="61" width="10" height="10" fill="#C9A84C"/>
+          <rect x="13" y="73" width="10" height="10" fill="#C9A84C"/>
+          <rect x="56" y="56" width="6" height="6" fill="#C9A84C"/>
+          <rect x="64" y="56" width="6" height="6" fill="#C9A84C"/>
+          <rect x="72" y="56" width="6" height="6" fill="#C9A84C"/>
+          <rect x="80" y="56" width="6" height="6" fill="#C9A84C"/>
+          <rect x="56" y="64" width="6" height="6" fill="#C9A84C"/>
+          <rect x="72" y="64" width="6" height="6" fill="#C9A84C"/>
+          <rect x="64" y="72" width="6" height="6" fill="#C9A84C"/>
+          <rect x="80" y="72" width="6" height="6" fill="#C9A84C"/>
+          <rect x="56" y="80" width="6" height="6" fill="#C9A84C"/>
+          <rect x="72" y="80" width="6" height="6" fill="#C9A84C"/>
+          <rect x="88" y="64" width="6" height="6" fill="#C9A84C"/>
+          <rect x="88" y="80" width="6" height="6" fill="#C9A84C"/>
+        </svg>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.gmxquantum.diary" class="download-btn" target="_blank">Download on Google Play</a>
+    </div>
+    <div class="download-card" style="opacity:0.7;">
+      <div style="font-size:2.2rem;">🍎</div>
+      <div class="store-name">App Store</div>
+      <div class="store-sub">iOS</div>
+      <div class="qr-placeholder">
+        <div style="font-size:0.72rem;color:#A8863A;letter-spacing:0.08em;text-align:center;padding:0 10px;">Available Soon on iOS</div>
+      </div>
+      <span class="coming-soon-badge">Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY POLICY -->
+<section id="privacy" style="padding:100px 10%;">
+  <div class="reveal" id="privacy-section">
+    <span class="section-tag">Legal</span>
+    <h2 class="section-title">Privacy Policy</h2>
+    <div class="gold-line"></div>
+    <p style="font-size:0.85rem;color:var(--brown-light);margin-bottom:40px;font-style:italic;">Last updated: March 2026 — GMX Quantum LLC</p>
+
+    <h3>Introduction</h3>
+    <p>GMX Quantum LLC ("we," "our," or "us") operates the diAry mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. By using diAry, you agree to the terms of this Privacy Policy.</p>
+
+    <h3>Information We Collect</h3>
+    <p>We collect only the information necessary to provide the diAry service:</p>
+    <ul>
+      <li>Account Information: Email address, first name, last name, and encrypted password upon registration.</li>
+      <li>Journal Content: Text, voice recordings, handwriting, and any content you create within the App. This content is stored securely and is never shared with third parties.</li>
+      <li>Mood Data: Mood selections and emotional tracking data you provide voluntarily.</li>
+      <li>Usage Data: Anonymized, aggregated app interaction data used to improve performance and features.</li>
+      <li>Device Information: Device type and OS version for technical support purposes only.</li>
+    </ul>
+
+    <h3>How We Use Your Information</h3>
+    <p>We use your information solely to provide, operate, and maintain the diAry application; process journal entries and generate AI Companion responses; send account verification and security notifications; provide customer support when requested; improve App features and user experience; and process subscription payments through secure third-party processors.</p>
+
+    <h3>AI Processing</h3>
+    <p>The diAry AI Companion feature uses Anthropic's Claude API to generate responses to your journal entries. Your journal content is transmitted to Anthropic's servers solely for the purpose of generating AI responses. We never use your journal entries to train AI models.</p>
+
+    <h3>Data Security</h3>
+    <p>We implement industry-standard security measures including encrypted data transmission (HTTPS/TLS), encrypted storage, JWT authentication with token expiration, and biometric authentication support.</p>
+
+    <h3>Ghost Mode & Burn Mode</h3>
+    <p>When entries are deleted via Burn Mode, they are permanently and irreversibly removed from our servers. We cannot recover deleted entries. Ghost Mode prevents screenshots and screen recordings within the App.</p>
+
+    <h3>Data Retention</h3>
+    <p>We retain your account information and journal entries for as long as your account is active. You may request deletion of your account and all associated data at any time by contacting support@gmxquantum.com. We will process deletion requests within 30 days.</p>
+
+    <h3>Third-Party Services</h3>
+    <p>diAry uses Anthropic Claude API (AI responses), OpenAI Whisper (voice transcription), Amazon Web Services (cloud infrastructure), RevenueCat (subscription management), and Yahoo SMTP (email verification).</p>
+
+    <h3>Children's Privacy</h3>
+    <p>diAry is intended for users 18 years of age and older. We do not knowingly collect information from children under 18. Contact us immediately at support@gmxquantum.com if you believe we have inadvertently collected information from a minor.</p>
+
+    <h3>Your Rights</h3>
+    <p>You have the right to access, correct, or delete your personal information at any time. To exercise these rights, contact support@gmxquantum.com.</p>
+
+    <h3>Contact Us</h3>
+    <p>GMX Quantum LLC<br>
+    Email: <a href="mailto:support@gmxquantum.com" style="color:var(--gold-dark);">support@gmxquantum.com</a><br>
+    Wilmington, Delaware, United States</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal">
+    <span class="section-tag">Get in Touch</span>
+    <h2 class="section-title">We're here<br>for you</h2>
+    <div class="gold-line"></div>
+  </div>
+  <div class="contact-box reveal">
+    <p style="font-size:1.15rem;font-style:italic;color:var(--brown);margin-bottom:20px;">Have questions, feedback, or need support?</p>
+    <p style="font-size:1rem;color:var(--brown-light);margin-bottom:32px;font-weight:300;">Our team at GMX Quantum LLC is here to help. We typically respond within 24 hours.</p>
+    <p style="font-size:1.1rem;color:var(--brown);margin-bottom:8px;">📧 <a href="mailto:support@gmxquantum.com" style="color:var(--gold-dark);text-decoration:none;font-style:italic;">support@gmxquantum.com</a></p>
+    <p style="font-size:0.85rem;color:var(--brown-light);margin-top:28px;font-weight:300;">GMX Quantum LLC — Wilmington, Delaware, United States</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">diAry</span>
+  <p class="footer-tagline">"I'll never tell."</p>
+  <div class="footer-links">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#videos">Videos</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 GMX Quantum LLC. All rights reserved. A GMCG Holdings Inc. company.</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
