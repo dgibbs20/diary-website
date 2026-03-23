@@ -280,24 +280,26 @@ footer {
 <body>
 
 <!-- SPLASH SCREEN -->
-<div id="splash" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#F5F0E8;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity 1.2s ease;">
+<div id="splash" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#F5F0E8;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity 1.2s ease;cursor:pointer;" onclick="enterSite()">
   <audio id="notify-sound" src="notify.wav" preload="auto"></audio>
   <img src="logo-transparent2.png" alt="diAry" style="height:280px;animation:splashPulse 1s ease-in-out infinite alternate;filter:drop-shadow(0 8px 32px rgba(201,168,76,0.4));">
   <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:#8B6347;letter-spacing:0.08em;animation:fadeUp 1s ease 0.5s both;">"I'll never tell."</p>
+<p style="font-family:'Cormorant Garamond',serif;font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:#C9A84C;animation:fadeUp 1s ease 1.5s both;">— Tap Anywhere to Enter —</p>
+<p style="font-family:'Cormorant Garamond',serif;font-size:0.82rem;font-style:italic;font-weight:300;color:#8B6347;letter-spacing:0.06em;animation:fadeUp 1s ease 2s both;">Your private space awaits</p>
 </div>
 <style>
 @keyframes splashPulse { from { transform: scale(1); } to { transform: scale(1.04); } }
 </style>
 <script>
-  window.addEventListener('load', function() {
-    var sound = document.getElementById('notify-sound');
-    sound.play().catch(function() {});
-    setTimeout(function() {
-      var splash = document.getElementById('splash');
-      splash.style.opacity = '0';
-      setTimeout(function() { splash.style.display = 'none'; }, 1200);
-    }, 3500);
-  });
+function enterSite() {
+  var sound = document.getElementById('notify-sound');
+  sound.play();
+  setTimeout(function() {
+    var splash = document.getElementById('splash');
+    splash.style.opacity = '0';
+    setTimeout(function() { splash.style.display = 'none'; }, 1200);
+  }, 800);
+}
 </script>
   
 <nav>
