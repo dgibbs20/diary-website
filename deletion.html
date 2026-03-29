@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account & Data Deletion Policy — diAry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7D9;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A8863A;
+  --gold-pale: rgba(201,168,76,0.12);
+  --brown: #2C1A0E;
+  --brown-mid: #5C3D2A;
+  --brown-light: #8B6347;
+  --white: #FDFAF4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-size: 1.9rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brown-mid); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+section { padding: 100px 10%; min-height: 100vh; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300; font-style: italic; line-height: 1.15;
+  color: var(--brown); margin-bottom: 20px;
+}
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 48px;
+}
+.legal-content { max-width: 900px; }
+.legal-content h3 {
+  font-size: 1.4rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin: 48px 0 16px;
+}
+.legal-content h4 {
+  font-size: 1.1rem; font-style: italic; font-weight: 500;
+  color: var(--brown-mid); margin: 32px 0 12px;
+}
+.legal-content p, .legal-content li {
+  font-size: 0.97rem; color: var(--brown-mid); font-weight: 300;
+  line-height: 1.8; margin-bottom: 16px;
+}
+.legal-content ul, .legal-content ol {
+  padding-left: 24px; margin-bottom: 20px;
+}
+.legal-content strong { font-weight: 600; color: var(--brown); }
+.legal-content a {
+  color: var(--gold-dark); text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  transition: border-color 0.2s;
+}
+.legal-content a:hover { border-bottom-color: var(--gold-dark); }
+.divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 48px 0;
+}
+.warning-box {
+  background: rgba(201,168,76,0.08);
+  border-left: 4px solid var(--gold);
+  padding: 24px 28px;
+  margin: 32px 0;
+  border-radius: 8px;
+}
+footer {
+  background: var(--brown); color: rgba(245,240,232,0.6);
+  padding: 36px 5%; text-align: center;
+}
+.footer-logo {
+  font-size: 2rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px; display: block;
+}
+.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 80px 5%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-transparent2.png" alt="diAry" style="height:145px;margin-top:40px;"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="index.html#download">Download</a></li>
+  </ul>
+</nav>
+
+<section>
+  <span class="section-tag">Legal</span>
+  <h2 class="section-title">Account & Data Deletion Policy</h2>
+  <div class="gold-line"></div>
+  <p style="font-size:0.85rem;color:var(--brown-light);margin-bottom:40px;font-style:italic;">Last updated: March 29, 2026 | Version 2.0 — GMX Quantum LLC</p>
+  
+  <div class="legal-content">
+    <p style="font-size:1.1rem;font-weight:400;margin-bottom:32px;"><strong>IMPORTANT NOTICE – DELETION IS PERMANENT AND IRREVERSIBLE</strong></p>
+    
+    <div class="warning-box">
+      <p style="margin-bottom:0;"><strong>⚠️ CRITICAL WARNING:</strong> Deleting your diAry account will permanently and irreversibly erase your account information, journal entries, mood data, and all associated content. <strong>THIS ACTION CANNOT BE UNDONE.</strong> We strongly recommend exporting your journal entries (Elite subscribers) before proceeding with account deletion.</p>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <h3>1. Introduction and Scope</h3>
+    <p>This Account and Data Deletion Policy ("Policy") explains how GMX Quantum LLC ("Company," "We," "Us," or "Our") handles account deletion requests for the diAry mobile application ("Service").</p>
+    <p>This Policy supplements our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>. By using the Service, you agree to this Policy.</p>
+    
+    <h3>2. Your Right to Delete Your Account</h3>
+    <p>You have the right to request deletion of your diAry account and associated personal data at any time, subject to the conditions and exceptions outlined in this Policy.</p>
+    <p><strong>This right applies to all users globally, including:</strong></p>
+    <ul>
+      <li>Users in the European Economic Area (EEA), United Kingdom, and Switzerland under GDPR Article 17 (Right to Erasure/"Right to Be Forgotten");</li>
+      <li>California residents under the California Consumer Privacy Act (CCPA);</li>
+      <li>All other users as a matter of Company policy.</li>
+    </ul>
+    
+    <h3>3. How to Delete Your Account</h3>
+    <h4>3.1 In-App Account Deletion</h4>
+    <p>To delete your account directly within the diAry app:</p>
+    <ol>
+      <li>Open the diAry application on your device;</li>
+      <li>Navigate to <strong>Settings</strong>;</li>
+      <li>Tap <strong>Account</strong>;</li>
+      <li>Tap <strong>Delete Account</strong>;</li>
+      <li>Read the deletion warning carefully;</li>
+      <li>Confirm deletion by entering your password;</li>
+      <li>Tap <strong>Confirm Deletion</strong>.</li>
+    </ol>
+    <p><strong>Your account and cloud-stored data will be deleted within forty-eight (48) hours.</strong></p>
+    
+    <h4>3.2 Email Account Deletion Request</h4>
+    <p>If you are unable to access the app or prefer to request deletion via email:</p>
+    <ul>
+      <li>Send an email to <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a>;</li>
+      <li>Use the subject line: <strong>"DELETE MY ACCOUNT"</strong>;</li>
+      <li>Include: Your full name, email address associated with your account, and reason for deletion (optional);</li>
+      <li>We will verify your identity and process the deletion request within thirty (30) days.</li>
+    </ul>
+    
+    <h3>4. What Gets Deleted Immediately (Within 48 Hours)</h3>
+    <p>When you delete your account, the following data is permanently erased from our production servers within forty-eight (48) hours:</p>
+    <ul>
+      <li><strong>Account Information:</strong> Your email address, first name, last name, and hashed password;</li>
+      <li><strong>Cloud-Synchronized Journal Entries:</strong> All journal entries stored on our servers (Elite subscribers only);</li>
+      <li><strong>Mood Tracking Data:</strong> All mood check-in records and emotional tracking data stored on our servers;</li>
+      <li><strong>Subscription Status:</strong> Your diAry Elite subscription status (subscription will be canceled immediately; see Section 7 for refund terms);</li>
+      <li><strong>AI Usage Logs:</strong> Records of AI transcription and companion response requests;</li>
+      <li><strong>Settings and Preferences:</strong> App settings, notification preferences, and customization data.</li>
+    </ul>
+    
+    <h3>5. What Gets Deleted Within 30 Days</h3>
+    <p>The following data is deleted within thirty (30) days of account deletion:</p>
+    <ul>
+      <li><strong>Backup Copies:</strong> Backup copies of your data stored for disaster recovery purposes;</li>
+      <li><strong>Cached Data:</strong> Cached data stored in content delivery networks (CDNs) or edge servers;</li>
+      <li><strong>Session Data:</strong> Active login sessions and authentication tokens.</li>
+    </ul>
+    
+    <h3>6. What Does NOT Get Deleted (Legal and Regulatory Exceptions)</h3>
+    <p>Certain data is retained for legal, regulatory, or security purposes and will NOT be deleted, even after account deletion:</p>
+    
+    <h4>6.1 Payment Transaction Records (Retained 7 Years)</h4>
+    <p>We retain subscription payment transaction records for <strong>seven (7) years</strong> to comply with tax, accounting, and financial regulations. This includes:</p>
+    <ul>
+      <li>Subscription purchase dates and amounts;</li>
+      <li>Payment method (last 4 digits of card, if applicable);</li>
+      <li>Transaction IDs and receipts from Apple App Store or Google Play Store.</li>
+    </ul>
+    <p><strong>These records are anonymized where possible and cannot be linked back to your journal entries or personal content.</strong></p>
+    
+    <h4>6.2 Customer Support Communications (Retained 3 Years)</h4>
+    <p>Email correspondence, support tickets, feedback, and bug reports submitted to <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a> are retained for <strong>three (3) years</strong> for customer service, quality assurance, and legal compliance purposes.</p>
+    
+    <h4>6.3 Anonymized Usage Analytics (Retained Indefinitely)</h4>
+    <p>Anonymized, aggregated usage statistics (e.g., feature adoption rates, session durations, error logs) are retained indefinitely. <strong>This data cannot be linked back to your individual account or identity.</strong></p>
+    
+    <h4>6.4 Security Incident Records</h4>
+    <p>If your account was involved in a security incident, fraud investigation, Terms of Service violation, or legal dispute, records related to that incident may be retained for as long as necessary to resolve the matter and comply with legal obligations.</p>
+    
+    <h3>7. Impact on Active Subscriptions</h3>
+    <p><strong>DELETING YOUR ACCOUNT IMMEDIATELY CANCELS YOUR diAry ELITE SUBSCRIPTION.</strong></p>
+    <ul>
+      <li>No refund will be issued for the current billing period (monthly or annual);</li>
+      <li>You will lose access to all Elite features immediately upon account deletion;</li>
+      <li>Future billing will stop (no additional charges after deletion);</li>
+      <li>See our <a href="refund.html">Refund Policy</a> for complete refund terms.</li>
+    </ul>
+    
+    <h3>8. Local Device Data – Your Responsibility</h3>
+    <p><strong>IMPORTANT: Account deletion ONLY deletes data stored on our servers. Data stored locally on your device is NOT deleted automatically.</strong></p>
+    <p>To fully delete all diAry data from your device:</p>
+    <ul>
+      <li><strong>iOS:</strong> Settings → General → iPhone Storage → diAry → Delete App;</li>
+      <li><strong>Android:</strong> Settings → Apps → diAry → Storage → Clear Data → Uninstall.</li>
+    </ul>
+    <p><strong>If you do not manually delete the app and clear app data, journal entries stored locally on your device will remain accessible even after your account is deleted.</strong></p>
+    
+    <h3>9. Deletion is Permanent and Irreversible</h3>
+    <div class="warning-box">
+      <p style="margin-bottom:0;"><strong>⚠️ CRITICAL WARNING:</strong> Once your account is deleted, <strong>WE CANNOT AND WILL NOT RECOVER YOUR DATA UNDER ANY CIRCUMSTANCES.</strong> There is no "undo" button, no grace period, and no data recovery process. Your journal entries, mood data, and account information are permanently and irreversibly erased.</p>
+    </div>
+    
+    <h3>10. GDPR-Specific Rights (EU/EEA/UK/Switzerland Users)</h3>
+    <p>If you are in the European Economic Area, United Kingdom, or Switzerland, you have the following rights under the General Data Protection Regulation (GDPR):</p>
+    <ul>
+      <li><strong>Right to Erasure (Article 17):</strong> You may request deletion of your personal data, subject to legal exceptions;</li>
+      <li><strong>Right to Restriction of Processing (Article 18):</strong> You may request that we restrict processing of your data rather than deleting it;</li>
+      <li><strong>Right to Object (Article 21):</strong> You may object to processing of your data for specific purposes;</li>
+      <li><strong>Right to Lodge a Complaint:</strong> You may file a complaint with your local Data Protection Authority if you believe we have not honored your deletion request.</li>
+    </ul>
+    
+    <h3>11. CCPA-Specific Rights (California Residents)</h3>
+    <p>If you are a California resident, the California Consumer Privacy Act (CCPA) provides you with the <strong>Right to Delete</strong> your personal information, subject to certain exceptions (e.g., transaction records for tax compliance).</p>
+    <p>To exercise your CCPA Right to Delete, send an email to <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a> with subject line <strong>"CCPA REQUEST – RIGHT TO DELETE"</strong>.</p>
+    
+    <h3>12. Exceptions to Deletion – When We May Decline a Request</h3>
+    <p>We may decline or delay a deletion request if:</p>
+    <ul>
+      <li>The request is necessary to complete a transaction, provide a service you requested, or fulfill a contract;</li>
+      <li>Retention is required to comply with legal, tax, accounting, or regulatory obligations;</li>
+      <li>Retention is necessary to detect, prevent, or investigate security incidents, fraud, or illegal activity;</li>
+      <li>Retention is necessary to exercise free speech rights, defend legal claims, or comply with court orders or lawful government requests;</li>
+      <li>We cannot verify your identity or confirm you are the account holder.</li>
+    </ul>
+    <p>If we decline a deletion request, we will notify you via email and explain the reason for the denial.</p>
+    
+    <h3>13. Contact Information</h3>
+    <p>For account deletion requests or questions about this Policy, contact:</p>
+    <p><strong>GMX Quantum LLC</strong><br>
+    Email: <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a><br>
+    Subject Line: "DELETE MY ACCOUNT" or "DATA DELETION INQUIRY"<br>
+    Registered Address: Wilmington, Delaware, United States</p>
+    
+    <p><strong>Response Time:</strong> We will respond to deletion requests within thirty (30) days for email requests, or within forty-eight (48) hours for in-app deletions.</p>
+    
+    <div class="divider"></div>
+    
+    <p style="margin-top:40px;font-size:0.85rem;color:var(--brown-light);font-style:italic;"><strong>Effective Date:</strong> March 29, 2026 | <strong>Version:</strong> 2.0</p>
+    <p style="font-size:0.85rem;color:var(--brown-light);font-style:italic;">By using diAry, you acknowledge that you have read, understood, and agree to this Account and Data Deletion Policy.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo"><img src="logo-transparent2.png" alt="diAry" style="height:220px;"></span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="deletion.html">Data Deletion</a>
+  </div>
+  <p class="footer-copy">© 2026 GMX Quantum LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
