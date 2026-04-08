@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California Privacy Rights (CCPA/CPRA) — diAry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7D9;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A8863A;
+  --gold-pale: rgba(201,168,76,0.12);
+  --brown: #2C1A0E;
+  --brown-mid: #5C3D2A;
+  --brown-light: #8B6347;
+  --white: #FDFAF4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-size: 1.9rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brown-mid); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+section { padding: 100px 10%; min-height: 100vh; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300; font-style: italic; line-height: 1.15;
+  color: var(--brown); margin-bottom: 20px;
+}
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 48px;
+}
+.legal-content { max-width: 900px; }
+.legal-content h3 {
+  font-size: 1.4rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin: 48px 0 16px;
+}
+.legal-content h4 {
+  font-size: 1.1rem; font-style: italic; font-weight: 500;
+  color: var(--brown-mid); margin: 32px 0 12px;
+}
+.legal-content p, .legal-content li {
+  font-size: 0.97rem; color: var(--brown-mid); font-weight: 300;
+  line-height: 1.8; margin-bottom: 16px;
+}
+.legal-content ul, .legal-content ol {
+  padding-left: 24px; margin-bottom: 20px;
+}
+.legal-content strong { font-weight: 600; color: var(--brown); }
+.legal-content a {
+  color: var(--gold-dark); text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  transition: border-color 0.2s;
+}
+.legal-content a:hover { border-bottom-color: var(--gold-dark); }
+.divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 48px 0;
+}
+.warning-box {
+  background: rgba(201,168,76,0.08);
+  border-left: 4px solid var(--gold);
+  padding: 24px 28px;
+  margin: 32px 0;
+  border-radius: 8px;
+}
+footer {
+  background: var(--brown); color: rgba(245,240,232,0.6);
+  padding: 36px 5%; text-align: center;
+}
+.footer-logo {
+  font-size: 2rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px; display: block;
+}
+.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 80px 5%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-transparent2.png" alt="diAry" style="height:145px;margin-top:40px;"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="index.html#download">Download</a></li>
+  </ul>
+</nav>
+
+<section>
+  <span class="section-tag">Legal</span>
+  <h2 class="section-title">California Privacy Rights (CCPA/CPRA)</h2>
+  <div class="gold-line"></div>
+  <p style="font-size:0.85rem;color:var(--brown-light);margin-bottom:40px;font-style:italic;">Last updated: April 8, 2026 | Version 1.0 — GMX Quantum LLC</p>
+  
+  <div class="legal-content">
+    <div class="warning-box">
+      <p style="margin-bottom:0;"><strong>FOR CALIFORNIA RESIDENTS:</strong> This document outlines your privacy rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). These rights are legally enforceable and non-negotiable.</p>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <h3>1. Introduction and Scope</h3>
+    <p>GMX Quantum LLC ("Company," "Business," "We," "Us," or "Our") is committed to protecting the privacy rights of California residents. This California Privacy Notice explains:</p>
+    <ul>
+      <li>Your rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA);</li>
+      <li>What personal information we collect, use, and disclose;</li>
+      <li>How we process, store, and protect your personal information;</li>
+      <li>How to exercise your CCPA/CPRA rights.</li>
+    </ul>
+    <p>This document supplements our <a href="privacy.html">Privacy Policy</a>, <a href="terms.html">Terms of Service</a>, and <a href="deletion.html">Account & Data Deletion Policy</a>.</p>
+    <p><strong>This notice applies ONLY to California residents.</strong> If you are not a California resident, see our general <a href="privacy.html">Privacy Policy</a> or <a href="gdpr-eu-ai-act.html">GDPR & EU AI Act Compliance</a> page (for EEA/UK/Switzerland users).</p>
+    
+    <h3>2. Personal Information We Collect</h3>
+    <p>Under the CCPA, "personal information" means information that identifies, relates to, describes, or could reasonably be linked to a particular California consumer or household.</p>
+    <p><strong>We collect the following categories of personal information:</strong></p>
+    
+    <h4>2.1 Identifiers</h4>
+    <p><strong>What we collect:</strong> Name, email address, unique account identifiers, device identifiers, IP address.</p>
+    <p><strong>Purpose:</strong> Account creation, authentication, subscription management, customer support.</p>
+    <p><strong>Sources:</strong> Directly from you when you create an account or contact support.</p>
+    
+    <h4>2.2 Commercial Information</h4>
+    <p><strong>What we collect:</strong> Subscription purchase history, payment transaction records, subscription tier (Free or Elite).</p>
+    <p><strong>Purpose:</strong> Billing, payment processing, subscription management, tax compliance.</p>
+    <p><strong>Sources:</strong> Directly from you and from third-party payment processors (Apple App Store, Google Play Store, RevenueCat).</p>
+    
+    <h4>2.3 Internet or Network Activity Information</h4>
+    <p><strong>What we collect:</strong> App usage data, session duration, feature usage logs, error logs, crash reports.</p>
+    <p><strong>Purpose:</strong> App performance monitoring, error detection, security monitoring, product improvement.</p>
+    <p><strong>Sources:</strong> Automatically collected when you use the diAry app.</p>
+    
+    <h4>2.4 Geolocation Data</h4>
+    <p><strong>What we collect:</strong> Approximate location (city/region level) based on IP address. <strong>We do NOT collect precise GPS coordinates.</strong></p>
+    <p><strong>Purpose:</strong> Security monitoring, fraud prevention, compliance with regional laws.</p>
+    <p><strong>Sources:</strong> Automatically collected from your device's network connection.</p>
+    
+    <h4>2.5 Sensitive Personal Information</h4>
+    <p>Under the CPRA, "sensitive personal information" includes information that reveals:</p>
+    <ul>
+      <li>Social Security number, driver's license, passport number;</li>
+      <li>Account credentials (username and password);</li>
+      <li>Precise geolocation;</li>
+      <li>Racial or ethnic origin, religious beliefs, union membership;</li>
+      <li>Contents of mail, email, and text messages (unless we are the intended recipient);</li>
+      <li>Genetic data, biometric data for unique identification;</li>
+      <li>Personal information collected about a known child under 13.</li>
+    </ul>
+    
+    <p><strong>What we collect:</strong> We collect <strong>account credentials (hashed passwords)</strong> for authentication purposes. We do NOT collect or store your password in plaintext.</p>
+    <p><strong>Journal entries may contain sensitive information you choose to write.</strong> We do not actively collect or analyze sensitive personal information from your journal entries. Your journal content is YOUR data, and we do not use it for marketing, profiling, or training AI models.</p>
+    <p><strong>What we do NOT collect:</strong> We do NOT collect Social Security numbers, driver's license numbers, precise geolocation, racial/ethnic data, religious beliefs, genetic data, biometric identifiers (fingerprints, facial scans), or personal information about children under 13.</p>
+    
+    <h3>3. How We Use Your Personal Information</h3>
+    <p>We use your personal information for the following business and commercial purposes:</p>
+    <ul>
+      <li><strong>Service Provision:</strong> To provide, maintain, and improve the diAry app;</li>
+      <li><strong>Account Management:</strong> To create and manage your account, authenticate logins, and process subscriptions;</li>
+      <li><strong>Customer Support:</strong> To respond to support inquiries, troubleshoot issues, and provide assistance;</li>
+      <li><strong>Security and Fraud Prevention:</strong> To detect, prevent, and investigate security incidents, fraud, and abuse;</li>
+      <li><strong>Legal Compliance:</strong> To comply with tax, accounting, and legal obligations;</li>
+      <li><strong>Product Improvement:</strong> To analyze app usage (anonymized) and improve features, performance, and user experience;</li>
+      <li><strong>Communications:</strong> To send transactional emails (e.g., password resets, subscription confirmations) and optional marketing emails (with your consent).</li>
+    </ul>
+    
+    <p><strong>WE DO NOT:</strong></p>
+    <ul>
+      <li>Sell your personal information to third parties;</li>
+      <li>Share your personal information for cross-context behavioral advertising (targeted ads);</li>
+      <li>Use your journal entries to train AI models or for any purpose other than providing transcription/companion features to you;</li>
+      <li>Profile you for automated decision-making that produces legal or similarly significant effects.</li>
+    </ul>
+    
+    <h3>4. Disclosure of Personal Information</h3>
+    <p>We disclose your personal information to the following categories of third parties:</p>
+    
+    <h4>4.1 Service Providers</h4>
+    <p>We disclose personal information to service providers who perform services on our behalf under written contracts:</p>
+    <ul>
+      <li><strong>Payment Processors:</strong> Apple (App Store), Google (Play Store), RevenueCat (subscription management);</li>
+      <li><strong>Cloud Infrastructure:</strong> Amazon Web Services (AWS), Google Cloud Platform, or similar providers for data hosting and storage;</li>
+      <li><strong>AI Processing:</strong> OpenAI or Anthropic for AI transcription and companion features (under strict data processing agreements);</li>
+      <li><strong>Analytics:</strong> Google Analytics or similar tools for anonymized app usage analytics.</li>
+    </ul>
+    <p><strong>Service providers are contractually prohibited from using your personal information for any purpose other than providing services to us.</strong></p>
+    
+    <h4>4.2 Legal and Regulatory Authorities</h4>
+    <p>We may disclose personal information to government agencies, law enforcement, or regulatory authorities when:</p>
+    <ul>
+      <li>Required by law, court order, or legal process;</li>
+      <li>Necessary to investigate fraud, security incidents, or violations of our Terms of Service;</li>
+      <li>Necessary to protect the rights, safety, or property of GMX Quantum LLC, our users, or the public.</li>
+    </ul>
+    
+    <h4>4.3 Business Transfers</h4>
+    <p>If GMX Quantum LLC is involved in a merger, acquisition, bankruptcy, or sale of assets, your personal information may be transferred to the acquiring entity. We will notify you via email or in-app notification before your personal information is transferred and becomes subject to a different privacy policy.</p>
+    
+    <h3>5. Your California Privacy Rights (CCPA/CPRA)</h3>
+    <p>As a California resident, you have the following legally enforceable rights:</p>
+    
+    <h4>5.1 Right to Know (CCPA § 1798.100)</h4>
+    <p>You have the right to request disclosure of:</p>
+    <ul>
+      <li>The categories of personal information we collected about you;</li>
+      <li>The categories of sources from which we collected your personal information;</li>
+      <li>The business or commercial purposes for collecting or selling your personal information;</li>
+      <li>The categories of third parties with whom we share your personal information;</li>
+      <li>The specific pieces of personal information we collected about you (data portability).</li>
+    </ul>
+    <p><strong>How to request:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"CCPA REQUEST – RIGHT TO KNOW"</strong>. We will respond within <strong>forty-five (45) days</strong> (or notify you if we need an additional 45 days).</p>
+    
+    <h4>5.2 Right to Delete (CCPA § 1798.105)</h4>
+    <p>You have the right to request deletion of your personal information, subject to certain exceptions (e.g., legal compliance, transaction records).</p>
+    <p>See our <a href="deletion.html">Account & Data Deletion Policy</a> for complete details on:</p>
+    <ul>
+      <li>How to delete your account (in-app or via email);</li>
+      <li>What data is deleted and when;</li>
+      <li>Legal exceptions to deletion (e.g., payment records retained for 7 years for tax compliance).</li>
+    </ul>
+    <p><strong>How to request deletion:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"CCPA REQUEST – RIGHT TO DELETE"</strong>. We will confirm deletion within <strong>forty-five (45) days</strong>.</p>
+    
+    <h4>5.3 Right to Correct (CPRA § 1798.106)</h4>
+    <p>You have the right to request correction of inaccurate personal information. You can update your account information directly in the app under Settings → Account, or email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"CCPA REQUEST – RIGHT TO CORRECT"</strong>.</p>
+    
+    <h4>5.4 Right to Opt-Out of Sale or Sharing (CCPA § 1798.120)</h4>
+    <p><strong>IMPORTANT: WE DO NOT SELL YOUR PERSONAL INFORMATION TO THIRD PARTIES.</strong></p>
+    <p>Under the CCPA, "sale" includes disclosing personal information to third parties for monetary or other valuable consideration. <strong>We do not engage in such practices.</strong></p>
+    <p><strong>WE DO NOT SHARE YOUR PERSONAL INFORMATION FOR CROSS-CONTEXT BEHAVIORAL ADVERTISING.</strong></p>
+    <p>Under the CPRA, "sharing" includes disclosing personal information to third parties for cross-context behavioral advertising (targeted ads). <strong>We do not engage in such practices.</strong></p>
+    <p><strong>If this changes in the future, we will:</strong></p>
+    <ul>
+      <li>Update this notice and notify you;</li>
+      <li>Provide a "Do Not Sell or Share My Personal Information" link in the app and on our website;</li>
+      <li>Honor opt-out requests within 15 business days.</li>
+    </ul>
+    
+    <h4>5.5 Right to Limit Use of Sensitive Personal Information (CPRA § 1798.121)</h4>
+    <p><strong>We only collect and use sensitive personal information (hashed passwords) for purposes necessary to provide the diAry service.</strong></p>
+    <p>We do NOT use sensitive personal information for:</p>
+    <ul>
+      <li>Inferring characteristics about you;</li>
+      <li>Targeted advertising;</li>
+      <li>Profiling or automated decision-making.</li>
+    </ul>
+    <p><strong>You do not need to opt out of sensitive data use because we do not use it for these purposes.</strong></p>
+    
+    <h4>5.6 Right to Non-Discrimination (CCPA § 1798.125)</h4>
+    <p><strong>WE WILL NOT DISCRIMINATE AGAINST YOU FOR EXERCISING YOUR CCPA/CPRA RIGHTS.</strong></p>
+    <p>We will not:</p>
+    <ul>
+      <li>Deny you goods or services;</li>
+      <li>Charge you different prices or rates;</li>
+      <li>Provide you a different level or quality of service;</li>
+      <li>Suggest that you will receive a different price or quality of service.</li>
+    </ul>
+    <p><strong>However, we may offer financial incentives (e.g., discounts, promotions) in exchange for collecting or retaining certain personal information, provided such incentives are reasonably related to the value of your data. Any such programs will be clearly disclosed with opt-in consent.</strong></p>
+    
+    <h3>6. How to Exercise Your CCPA/CPRA Rights</h3>
+    <p>To exercise any of your California privacy rights:</p>
+    <ol>
+      <li>Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a>;</li>
+      <li>Use a clear subject line (e.g., "CCPA REQUEST – RIGHT TO KNOW");</li>
+      <li>Include: Your full name, email address associated with your account, California residency confirmation, and a description of your request;</li>
+      <li>We will verify your identity by confirming your account email or asking for additional verification if necessary;</li>
+      <li>We will respond within <strong>forty-five (45) days</strong> (or notify you if we need an additional 45 days).</li>
+    </ol>
+    
+    <p><strong>Authorized Agents:</strong> You may designate an authorized agent to make a CCPA/CPRA request on your behalf. The authorized agent must provide:</p>
+    <ul>
+      <li>Written authorization signed by you;</li>
+      <li>Proof of the agent's identity;</li>
+      <li>We may still require you to verify your identity directly.</li>
+    </ul>
+    
+    <p><strong>There is no fee for exercising your CCPA/CPRA rights.</strong> If your request is manifestly unfounded or excessive, we may charge a reasonable fee or refuse the request.</p>
+    
+    <h3>7. Data Retention</h3>
+    <p>We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected or to comply with legal obligations:</p>
+    <ul>
+      <li><strong>Account and journal data:</strong> Deleted within 48 hours of account deletion;</li>
+      <li><strong>Backup copies:</strong> Deleted within 30 days of account deletion;</li>
+      <li><strong>Payment transaction records:</strong> Retained for 7 years (California tax and accounting compliance);</li>
+      <li><strong>Customer support emails:</strong> Retained for 3 years;</li>
+      <li><strong>Anonymized analytics:</strong> Retained indefinitely (cannot be linked to you).</li>
+    </ul>
+    <p>For complete details, see our <a href="deletion.html">Account & Data Deletion Policy</a>.</p>
+    
+    <h3>8. California "Shine the Light" Law (Civil Code § 1798.83)</h3>
+    <p>California Civil Code Section 1798.83 permits California residents to request information about disclosure of personal information to third parties for direct marketing purposes.</p>
+    <p><strong>WE DO NOT DISCLOSE YOUR PERSONAL INFORMATION TO THIRD PARTIES FOR THEIR DIRECT MARKETING PURPOSES.</strong></p>
+    <p>If this changes in the future, you may request a "Shine the Light" disclosure by emailing <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"CALIFORNIA SHINE THE LIGHT REQUEST"</strong>.</p>
+    
+    <h3>9. California Online Privacy Protection Act (CalOPPA)</h3>
+    <p>CalOPPA requires commercial websites and online services to post a privacy policy. Our <a href="privacy.html">Privacy Policy</a> complies with CalOPPA and discloses:</p>
+    <ul>
+      <li>The categories of personal information we collect;</li>
+      <li>How we use and share personal information;</li>
+      <li>Your rights and choices regarding your personal information;</li>
+      <li>How we respond to "Do Not Track" (DNT) signals.</li>
+    </ul>
+    
+    <h4>9.1 Do Not Track (DNT) Signals</h4>
+    <p><strong>We do not currently respond to "Do Not Track" (DNT) browser signals.</strong></p>
+    <p>The diAry app does not track users across third-party websites or apps. We only collect usage data within the diAry app itself for performance monitoring and product improvement.</p>
+    <p>If you wish to disable app usage analytics, you can do so in Settings → Privacy → Disable Analytics.</p>
+    
+    <h3>10. Children's Privacy (COPPA and California Minors)</h3>
+    <p><strong>diAry is NOT intended for children under 13 years of age.</strong></p>
+    <p>We do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will delete that information immediately.</p>
+    <p><strong>California Minors (Under 18):</strong> If you are a California resident under 18 and have an account, you may request removal of content you posted to the Service by emailing <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"CALIFORNIA MINOR – CONTENT REMOVAL REQUEST"</strong>. Note that removal does not ensure complete deletion if the content was shared with others or reposted.</p>
+    
+    <h3>11. International Data Transfers</h3>
+    <p>Your personal information may be stored and processed in the United States or other countries where our service providers operate. By using diAry, you consent to the transfer of your personal information to the United States and other countries, which may have different data protection laws than California.</p>
+    <p>We implement safeguards (e.g., encryption, Standard Contractual Clauses) to protect your personal information during international transfers.</p>
+    
+    <h3>12. Updates to This Notice</h3>
+    <p>We may update this California Privacy Notice to reflect:</p>
+    <ul>
+      <li>Changes in CCPA/CPRA regulations;</li>
+      <li>Changes in our data processing practices;</li>
+      <li>New features or services that affect personal information processing.</li>
+    </ul>
+    <p>We will notify you of material changes via:</p>
+    <ul>
+      <li>Email notification to your registered account email;</li>
+      <li>In-app notification when you next open diAry;</li>
+      <li>Updated "Last Updated" date at the top of this document.</li>
+    </ul>
+    <p><strong>Continued use of diAry after such changes constitutes acceptance of the updated notice.</strong></p>
+    
+    <h3>13. Contact Information</h3>
+    <p>For CCPA/CPRA-related inquiries or to exercise your California privacy rights, contact:</p>
+    <p><strong>GMX Quantum LLC</strong><br>
+    Privacy Officer<br>
+    Email: <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a><br>
+    Subject Line: "CCPA REQUEST" or "CALIFORNIA PRIVACY INQUIRY"<br>
+    Registered Address: Wilmington, Delaware, United States</p>
+    
+    <p><strong>Response Time:</strong> We will respond to CCPA/CPRA requests within forty-five (45) days. If we need more time, we will notify you and explain the reason for the delay.</p>
+    
+    <div class="divider"></div>
+    
+    <p style="margin-top:40px;font-size:0.85rem;color:var(--brown-light);font-style:italic;"><strong>Effective Date:</strong> April 8, 2026 | <strong>Version:</strong> 1.0</p>
+    <p style="font-size:0.85rem;color:var(--brown-light);font-style:italic;">This notice is legally binding and enforceable under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA). By using diAry, you acknowledge that you have read, understood, and agreed to the terms outlined in this notice.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">diAry</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="deletion.html">Data Deletion</a>
+    <a href="gdpr-eu-ai-act.html">GDPR & EU AI Act</a>
+    <a href="ccpa-cpra.html">CCPA/CPRA</a>
+  </div>
+  <p class="footer-copy">© 2026 GMX Quantum LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
