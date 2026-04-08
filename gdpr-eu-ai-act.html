@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDPR & EU AI Act Compliance — diAry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7D9;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A8863A;
+  --gold-pale: rgba(201,168,76,0.12);
+  --brown: #2C1A0E;
+  --brown-mid: #5C3D2A;
+  --brown-light: #8B6347;
+  --white: #FDFAF4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-size: 1.9rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brown-mid); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+section { padding: 100px 10%; min-height: 100vh; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300; font-style: italic; line-height: 1.15;
+  color: var(--brown); margin-bottom: 20px;
+}
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 48px;
+}
+.legal-content { max-width: 900px; }
+.legal-content h3 {
+  font-size: 1.4rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin: 48px 0 16px;
+}
+.legal-content h4 {
+  font-size: 1.1rem; font-style: italic; font-weight: 500;
+  color: var(--brown-mid); margin: 32px 0 12px;
+}
+.legal-content p, .legal-content li {
+  font-size: 0.97rem; color: var(--brown-mid); font-weight: 300;
+  line-height: 1.8; margin-bottom: 16px;
+}
+.legal-content ul, .legal-content ol {
+  padding-left: 24px; margin-bottom: 20px;
+}
+.legal-content strong { font-weight: 600; color: var(--brown); }
+.legal-content a {
+  color: var(--gold-dark); text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  transition: border-color 0.2s;
+}
+.legal-content a:hover { border-bottom-color: var(--gold-dark); }
+.divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 48px 0;
+}
+.warning-box {
+  background: rgba(201,168,76,0.08);
+  border-left: 4px solid var(--gold);
+  padding: 24px 28px;
+  margin: 32px 0;
+  border-radius: 8px;
+}
+footer {
+  background: var(--brown); color: rgba(245,240,232,0.6);
+  padding: 36px 5%; text-align: center;
+}
+.footer-logo {
+  font-size: 2rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px; display: block;
+}
+.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 80px 5%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-transparent2.png" alt="diAry" style="height:145px;margin-top:40px;"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="index.html#download">Download</a></li>
+  </ul>
+</nav>
+
+<section>
+  <span class="section-tag">Legal</span>
+  <h2 class="section-title">GDPR & EU AI Act Compliance</h2>
+  <div class="gold-line"></div>
+  <p style="font-size:0.85rem;color:var(--brown-light);margin-bottom:40px;font-style:italic;">Last updated: April 8, 2026 | Version 1.0 — GMX Quantum LLC</p>
+  
+  <div class="legal-content">
+    <div class="warning-box">
+      <p style="margin-bottom:0;"><strong>FOR USERS IN THE EUROPEAN ECONOMIC AREA (EEA), UNITED KINGDOM, AND SWITZERLAND:</strong> This document outlines your data protection rights under the General Data Protection Regulation (GDPR) and our compliance with the European Union Artificial Intelligence Act (EU AI Act). These rights are legally enforceable and non-negotiable.</p>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <h3>1. Introduction and Scope</h3>
+    <p>GMX Quantum LLC ("Company," "We," "Us," or "Our") is committed to protecting the privacy and data rights of users in the European Economic Area (EEA), United Kingdom, and Switzerland. This document explains:</p>
+    <ul>
+      <li>Your rights under the General Data Protection Regulation (GDPR);</li>
+      <li>Our compliance with the European Union Artificial Intelligence Act (EU AI Act);</li>
+      <li>How we process, store, and protect your personal data;</li>
+      <li>How our AI features comply with EU transparency and safety requirements.</li>
+    </ul>
+    <p>This document supplements our <a href="privacy.html">Privacy Policy</a>, <a href="terms.html">Terms of Service</a>, and <a href="deletion.html">Account & Data Deletion Policy</a>.</p>
+    
+    <h3>2. Our Legal Basis for Processing Your Data (GDPR Article 6)</h3>
+    <p>Under GDPR, we must have a lawful basis to process your personal data. We process your data based on the following legal grounds:</p>
+    
+    <h4>2.1 Contractual Necessity (GDPR Article 6(1)(b))</h4>
+    <p>Processing is necessary to provide the diAry service to you, including:</p>
+    <ul>
+      <li>Account creation and authentication;</li>
+      <li>Cloud synchronization of journal entries (Elite subscribers);</li>
+      <li>Subscription billing and payment processing;</li>
+      <li>AI transcription and companion features.</li>
+    </ul>
+    
+    <h4>2.2 Legitimate Interests (GDPR Article 6(1)(f))</h4>
+    <p>Processing is necessary for our legitimate business interests, including:</p>
+    <ul>
+      <li>App performance monitoring and error detection;</li>
+      <li>Security monitoring and fraud prevention;</li>
+      <li>Anonymized analytics to improve user experience;</li>
+      <li>Customer support and issue resolution.</li>
+    </ul>
+    <p><strong>You have the right to object to processing based on legitimate interests at any time.</strong></p>
+    
+    <h4>2.3 Consent (GDPR Article 6(1)(a))</h4>
+    <p>For certain optional features, we rely on your explicit consent:</p>
+    <ul>
+      <li>Optional email marketing communications;</li>
+      <li>Optional analytics and app usage tracking;</li>
+      <li>Optional third-party integrations (future features).</li>
+    </ul>
+    <p><strong>You may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</strong></p>
+    
+    <h4>2.4 Legal Obligations (GDPR Article 6(1)(c))</h4>
+    <p>Processing is necessary to comply with legal obligations, including:</p>
+    <ul>
+      <li>Tax and accounting record retention (7 years);</li>
+      <li>Compliance with lawful government or court orders;</li>
+      <li>Detection and reporting of illegal activity when required by law.</li>
+    </ul>
+    
+    <h3>3. Your GDPR Data Subject Rights</h3>
+    <p>As a user in the EEA, UK, or Switzerland, you have the following legally enforceable rights:</p>
+    
+    <h4>3.1 Right to Access (Article 15)</h4>
+    <p>You have the right to request:</p>
+    <ul>
+      <li>Confirmation of whether we process your personal data;</li>
+      <li>A copy of all personal data we hold about you;</li>
+      <li>Information about the purposes of processing, categories of data, and recipients;</li>
+      <li>Information about retention periods and your other GDPR rights.</li>
+    </ul>
+    <p><strong>To request access:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"GDPR REQUEST – RIGHT TO ACCESS"</strong>. We will respond within <strong>thirty (30) days</strong> with your data in a structured, commonly used, and machine-readable format (JSON or CSV).</p>
+    
+    <h4>3.2 Right to Rectification (Article 16)</h4>
+    <p>You have the right to correct inaccurate or incomplete personal data. You can update your account information directly in the app under Settings → Account, or email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a>.</p>
+    
+    <h4>3.3 Right to Erasure / "Right to Be Forgotten" (Article 17)</h4>
+    <p>You have the right to request deletion of your personal data. See our <a href="deletion.html">Account & Data Deletion Policy</a> for complete details on:</p>
+    <ul>
+      <li>How to delete your account (in-app or via email);</li>
+      <li>What data is deleted and when;</li>
+      <li>Legal exceptions to deletion (e.g., payment records, legal compliance).</li>
+    </ul>
+    <p><strong>Account deletion is permanent and irreversible. We cannot recover data after deletion.</strong></p>
+    
+    <h4>3.4 Right to Restriction of Processing (Article 18)</h4>
+    <p>You may request that we restrict processing of your data (without deleting it) if:</p>
+    <ul>
+      <li>You contest the accuracy of your data and want us to verify it;</li>
+      <li>Processing is unlawful, but you prefer restriction over deletion;</li>
+      <li>We no longer need the data, but you need it for legal claims;</li>
+      <li>You have objected to processing and verification is pending.</li>
+    </ul>
+    <p><strong>To request restriction:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"GDPR REQUEST – RESTRICTION OF PROCESSING"</strong>.</p>
+    
+    <h4>3.5 Right to Data Portability (Article 20)</h4>
+    <p>You have the right to receive your personal data in a structured, commonly used, and machine-readable format (JSON or CSV) and to transmit that data to another service provider.</p>
+    <p><strong>Data portability includes:</strong></p>
+    <ul>
+      <li>Your journal entries (text and metadata);</li>
+      <li>Your mood tracking data;</li>
+      <li>Your account information (name, email);</li>
+      <li>Your AI transcription history (if applicable).</li>
+    </ul>
+    <p><strong>To request data export:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"GDPR REQUEST – DATA PORTABILITY"</strong>. We will provide your data within <strong>thirty (30) days</strong>.</p>
+    
+    <h4>3.6 Right to Object (Article 21)</h4>
+    <p>You have the right to object to processing of your data for:</p>
+    <ul>
+      <li><strong>Direct marketing:</strong> You may opt out of marketing emails at any time via the "unsubscribe" link in our emails;</li>
+      <li><strong>Processing based on legitimate interests:</strong> You may object to analytics or performance monitoring; we will cease processing unless we have compelling legitimate grounds that override your interests.</li>
+    </ul>
+    <p><strong>To object:</strong> Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a> with subject line <strong>"GDPR REQUEST – RIGHT TO OBJECT"</strong>.</p>
+    
+    <h4>3.7 Right Not to Be Subject to Automated Decision-Making (Article 22)</h4>
+    <p><strong>IMPORTANT: diAry does NOT use automated decision-making or profiling that produces legal effects or significantly affects you.</strong></p>
+    <ul>
+      <li>Our AI transcription feature converts speech to text but does not make automated decisions about you;</li>
+      <li>Our AI companion feature provides conversational responses but does not evaluate, score, or categorize you;</li>
+      <li>We do not use AI to make decisions about subscriptions, access, or account status.</li>
+    </ul>
+    <p>If this changes in the future, we will update this policy and notify you.</p>
+    
+    <h3>4. How to Exercise Your GDPR Rights</h3>
+    <p>To exercise any of your GDPR rights:</p>
+    <ol>
+      <li>Email <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a>;</li>
+      <li>Use a clear subject line (e.g., "GDPR REQUEST – RIGHT TO ACCESS");</li>
+      <li>Include: Your full name, email address associated with your account, and a description of your request;</li>
+      <li>We will verify your identity and respond within <strong>thirty (30) days</strong>.</li>
+    </ol>
+    <p><strong>There is no fee for exercising your GDPR rights.</strong> If your request is manifestly unfounded or excessive, we may charge a reasonable fee or refuse the request.</p>
+    
+    <h3>5. Data Retention Periods (GDPR Article 5(1)(e))</h3>
+    <p>We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected or to comply with legal obligations:</p>
+    <ul>
+      <li><strong>Account and journal data:</strong> Deleted within 48 hours of account deletion;</li>
+      <li><strong>Backup copies:</strong> Deleted within 30 days of account deletion;</li>
+      <li><strong>Payment records:</strong> Retained for 7 years (tax compliance);</li>
+      <li><strong>Customer support emails:</strong> Retained for 3 years;</li>
+      <li><strong>Anonymized analytics:</strong> Retained indefinitely (cannot be linked to you).</li>
+    </ul>
+    <p>For complete details, see our <a href="deletion.html">Account & Data Deletion Policy</a>.</p>
+    
+    <h3>6. International Data Transfers (GDPR Article 44-50)</h3>
+    <p><strong>WHERE IS YOUR DATA STORED?</strong></p>
+    <p>Your data may be stored and processed in:</p>
+    <ul>
+      <li><strong>United States:</strong> Our primary servers are located in the United States;</li>
+      <li><strong>European Union:</strong> We may use EU-based cloud infrastructure for certain services.</li>
+    </ul>
+    
+    <h4>6.1 Legal Safeguards for Data Transfers</h4>
+    <p>When transferring personal data from the EEA to the United States, we rely on the following legal mechanisms:</p>
+    <ul>
+      <li><strong>Standard Contractual Clauses (SCCs):</strong> We use EU-approved Standard Contractual Clauses with our service providers;</li>
+      <li><strong>Adequacy Decisions:</strong> We may rely on EU Commission adequacy decisions when available;</li>
+      <li><strong>Technical and Organizational Measures:</strong> We implement encryption, access controls, and security monitoring to protect data in transit and at rest.</li>
+    </ul>
+    
+    <h4>6.2 Third-Party Processors with Access to Your Data</h4>
+    <p>The following third-party processors may have access to your data:</p>
+    <ul>
+      <li><strong>Apple (App Store, RevenueCat):</strong> Payment processing for iOS subscriptions (covered by Apple's GDPR-compliant Data Processing Agreement);</li>
+      <li><strong>Google (Play Store, RevenueCat):</strong> Payment processing for Android subscriptions (covered by Google's GDPR-compliant Data Processing Agreement);</li>
+      <li><strong>OpenAI or Anthropic (AI transcription and companion features):</strong> AI processing under GDPR-compliant Data Processing Agreements with strict data minimization and deletion policies.</li>
+    </ul>
+    <p><strong>We do NOT sell your personal data to third parties under any circumstances.</strong></p>
+    
+    <h3>7. EU AI Act Compliance</h3>
+    <p>The European Union Artificial Intelligence Act (EU AI Act) regulates the development, deployment, and use of AI systems within the EU. diAry's AI features are designed to comply with the EU AI Act requirements.</p>
+    
+    <h4>7.1 AI Risk Classification</h4>
+    <p><strong>diAry's AI features are classified as "MINIMAL RISK" under the EU AI Act.</strong></p>
+    <ul>
+      <li><strong>AI Transcription:</strong> Converts speech to text for personal journaling purposes. Does not make decisions about you, evaluate you, or affect your legal rights;</li>
+      <li><strong>AI Companion:</strong> Provides conversational responses and journaling prompts. Does not use biometric identification, predictive policing, social scoring, or emotion recognition for prohibited purposes.</li>
+    </ul>
+    <p><strong>diAry does NOT deploy "high-risk" AI systems as defined by the EU AI Act (Annex III).</strong></p>
+    
+    <h4>7.2 Transparency Requirements (EU AI Act Article 52)</h4>
+    <p>We clearly disclose when you are interacting with an AI system:</p>
+    <ul>
+      <li>AI transcription features are labeled as <strong>"AI Transcription"</strong> in the app;</li>
+      <li>AI companion responses are clearly marked and distinguishable from human-generated content;</li>
+      <li>We do not use AI to generate "deepfakes" or manipulated content that could deceive you.</li>
+    </ul>
+    
+    <h4>7.3 Data Minimization and Privacy by Design (EU AI Act Article 10)</h4>
+    <p>Our AI features are designed with privacy and data minimization principles:</p>
+    <ul>
+      <li><strong>No training on your data:</strong> Your journal entries and voice recordings are NOT used to train AI models;</li>
+      <li><strong>Ephemeral processing:</strong> Voice recordings for transcription are deleted immediately after processing;</li>
+      <li><strong>On-device processing (when possible):</strong> We prioritize on-device AI processing to minimize data transmission;</li>
+      <li><strong>Encryption:</strong> All AI processing requests are encrypted in transit (TLS/SSL).</li>
+    </ul>
+    
+    <h4>7.4 Human Oversight and Accountability</h4>
+    <p>While diAry uses AI for transcription and conversational features, <strong>you remain in full control</strong>:</p>
+    <ul>
+      <li>You can edit, delete, or override AI-generated transcriptions;</li>
+      <li>You can disable AI features at any time in Settings;</li>
+      <li>AI companion responses are suggestions, not automated decisions that affect your rights;</li>
+      <li>We maintain logs of AI processing for accountability and debugging purposes (anonymized where possible).</li>
+    </ul>
+    
+    <h3>8. Security Measures (GDPR Article 32)</h3>
+    <p>We implement technical and organizational measures to protect your data:</p>
+    <ul>
+      <li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.3) and at rest (AES-256);</li>
+      <li><strong>Access controls:</strong> Role-based access controls (RBAC) limit employee access to personal data;</li>
+      <li><strong>Authentication:</strong> Passwords are hashed using industry-standard bcrypt;</li>
+      <li><strong>Monitoring:</strong> We monitor for security incidents, unauthorized access, and data breaches;</li>
+      <li><strong>Data breach notification:</strong> In the event of a data breach that poses a risk to your rights, we will notify you and the relevant supervisory authority within 72 hours as required by GDPR Article 33.</li>
+    </ul>
+    
+    <h3>9. Your Right to Lodge a Complaint</h3>
+    <p>If you believe we have violated your GDPR rights, you have the right to lodge a complaint with your local Data Protection Authority (DPA).</p>
+    <p><strong>EEA/UK/Switzerland Data Protection Authorities:</strong></p>
+    <ul>
+      <li><strong>Austria:</strong> Austrian Data Protection Authority (Österreichische Datenschutzbehörde)</li>
+      <li><strong>Belgium:</strong> Belgian Data Protection Authority (Autorité de protection des données)</li>
+      <li><strong>France:</strong> CNIL (Commission Nationale de l'Informatique et des Libertés)</li>
+      <li><strong>Germany:</strong> Federal Commissioner for Data Protection and Freedom of Information (BfDI)</li>
+      <li><strong>Ireland:</strong> Data Protection Commission (DPC)</li>
+      <li><strong>United Kingdom:</strong> Information Commissioner's Office (ICO)</li>
+      <li><strong>Switzerland:</strong> Federal Data Protection and Information Commissioner (FDPIC)</li>
+    </ul>
+    <p>You can find a complete list of EU Data Protection Authorities at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>.</p>
+    
+    <h3>10. Updates to This Policy</h3>
+    <p>We may update this GDPR & EU AI Act Compliance document to reflect:</p>
+    <ul>
+      <li>Changes in GDPR or EU AI Act regulations;</li>
+      <li>Changes in our data processing practices;</li>
+      <li>New features or services that affect data processing.</li>
+    </ul>
+    <p>We will notify you of material changes via:</p>
+    <ul>
+      <li>Email notification to your registered account email;</li>
+      <li>In-app notification when you next open diAry;</li>
+      <li>Updated "Last Updated" date at the top of this document.</li>
+    </ul>
+    <p><strong>Continued use of diAry after such changes constitutes acceptance of the updated policy.</strong></p>
+    
+    <h3>11. Contact Information</h3>
+    <p>For GDPR-related inquiries, data subject rights requests, or EU AI Act compliance questions, contact:</p>
+    <p><strong>GMX Quantum LLC</strong><br>
+    Data Protection Officer<br>
+    Email: <a href="mailto:support@diary.gmxquantum.com">support@diary.gmxquantum.com</a><br>
+    Subject Line: "GDPR REQUEST" or "EU AI ACT INQUIRY"<br>
+    Registered Address: Wilmington, Delaware, United States</p>
+    
+    <p><strong>Response Time:</strong> We will respond to GDPR requests within thirty (30) days. If we need more time, we will notify you and explain the reason for the delay.</p>
+    
+    <div class="divider"></div>
+    
+    <p style="margin-top:40px;font-size:0.85rem;color:var(--brown-light);font-style:italic;"><strong>Effective Date:</strong> April 8, 2026 | <strong>Version:</strong> 1.0</p>
+    <p style="font-size:0.85rem;color:var(--brown-light);font-style:italic;">This document is legally binding and enforceable under the General Data Protection Regulation (GDPR) and the European Union Artificial Intelligence Act (EU AI Act). By using diAry, you acknowledge that you have read, understood, and agreed to the terms outlined in this document.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">diAry</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="deletion.html">Data Deletion</a>
+    <a href="gdpr-eu-ai-act.html">GDPR & EU AI Act</a>
+    <a href="ccpa-cpra.html">CCPA/CPRA</a>
+  </div>
+  <p class="footer-copy">© 2026 GMX Quantum LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
