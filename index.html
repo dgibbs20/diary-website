@@ -193,7 +193,7 @@ section { padding: 100px 5%; }
   display: grid; 
   grid-template-columns: 1fr; 
   gap: 32px; 
-  max-width: 360px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .video-wrap {
@@ -201,8 +201,9 @@ section { padding: 100px 5%; }
   overflow: hidden;
   border: 1px solid rgba(201,168,76,0.2);
   background: var(--brown);
-  width: 360px;
-  height: 640px;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
   margin: 0 auto;
 }
 .video-wrap iframe { 
