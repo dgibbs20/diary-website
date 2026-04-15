@@ -881,7 +881,7 @@ reveals.forEach(el => observer.observe(el));
       
       if (data.access_token || data.message === 'User created successfully') {
         // Success
-        messageEl.textContent = '✓ You're on the list! Check your email for confirmation.';
+        messageEl.textContent = '\u2713 You\'re on the list! Check your email for confirmation.';
         messageEl.style.color = 'var(--gold)';
         messageEl.style.display = 'block';
         emailInput.value = '';
