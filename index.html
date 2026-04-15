@@ -275,6 +275,7 @@ footer {
   .nav-links { display: none; }
   section { padding: 72px 5%; }
   .contact-box { padding: 40px 24px; }
+  .download-cards { display: grid; grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -620,6 +621,32 @@ function enterSite() {
       </div>
       <span class="coming-soon-badge">Coming Soon</span>
     </div>
+    
+    <!-- Email Waitlist Form -->
+    <div class="download-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+      <h3 style="font-size:1.3rem;font-style:italic;color:var(--brown);margin-bottom:12px;">Join the Waitlist</h3>
+      <p style="font-size:0.9rem;color:var(--brown-light);margin-bottom:24px;">Get notified when diAry launches on iOS and receive exclusive updates.</p>
+      
+      <form id="waitlist-form" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%;">
+        <input 
+          type="email" 
+          id="waitlist-email" 
+          placeholder="Enter your email" 
+          required
+          style="flex:1;min-width:250px;padding:14px 20px;border:1px solid rgba(201,168,76,0.3);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:0.9rem;background:var(--white);color:var(--brown);"
+        >
+        <button 
+          type="submit" 
+          class="btn-primary"
+          style="flex-shrink:0;"
+        >
+          Join Waitlist
+        </button>
+      </form>
+      
+      <p id="waitlist-message" style="margin-top:16px;font-size:0.85rem;color:var(--gold);display:none;"></p>
+    </div>
+    
   </div>
 </section>
 
@@ -772,5 +799,56 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 reveals.forEach(el => observer.observe(el));
 </script>
+
+<!-- Email Waitlist Handler -->
+<script>
+document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('waitlist-email').value;
+  const messageEl = document.getElementById('waitlist-message');
+  const submitBtn = e.target.querySelector('button[type="submit"]');
+  
+  // Disable button during submission
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Joining...';
+  
+  try {
+    const response = await fetch('https://api.diary.gmxquantum.com/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        password: 'WEBSITE_SIGNUP_' + Math.random().toString(36).substring(7),
+        fullname: 'Website Subscriber'
+      })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      // Success
+      messageEl.textContent = '✓ You're on the list! Check your email for confirmation.';
+      messageEl.style.color = 'var(--gold)';
+      messageEl.style.display = 'block';
+      document.getElementById('waitlist-email').value = '';
+    } else {
+      // Error
+      messageEl.textContent = data.message || 'Something went wrong. Please try again.';
+      messageEl.style.color = 'var(--brown-light)';
+      messageEl.style.display = 'block';
+    }
+  } catch (error) {
+    messageEl.textContent = 'Network error. Please check your connection and try again.';
+    messageEl.style.color = 'var(--brown-light)';
+    messageEl.style.display = 'block';
+  } finally {
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Join Waitlist';
+  }
+});
+</script>
+
 </body>
 </html>
