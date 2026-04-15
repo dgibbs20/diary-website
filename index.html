@@ -832,23 +832,22 @@ reveals.forEach(el => observer.observe(el));
 <!-- Email Waitlist Handler -->
 <script>
 (function() {
-  console.log('🔥 Script is executing');
+  console.log('Script is executing');
   
   var form = document.getElementById('waitlist-form');
   
   if (!form) {
-    console.error('❌ Waitlist form not found!');
+    console.error('Waitlist form not found!');
     return;
   }
   
-  console.log('✅ Form found, attaching handler');
+  console.log('Form found, attaching handler');
   
   form.addEventListener('submit', function(event) {
-    // CRITICAL: Call preventDefault() FIRST
     event.preventDefault();
     event.stopPropagation();
     
-    console.log('🚀 Form submit prevented, starting fetch...');
+    console.log('Form submit prevented, starting fetch...');
     
     var emailInput = document.getElementById('waitlist-email');
     var messageEl = document.getElementById('waitlist-message');
@@ -856,13 +855,11 @@ reveals.forEach(el => observer.observe(el));
     
     var email = emailInput.value;
     
-    console.log('📧 Email captured:', email);
+    console.log('Email captured:', email);
     
-    // Disable button during submission
     submitBtn.disabled = true;
     submitBtn.textContent = 'Joining...';
     
-    // Make API request
     fetch('https://api.diary.gmxquantum.com/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -873,36 +870,32 @@ reveals.forEach(el => observer.observe(el));
       })
     })
     .then(function(response) {
-      console.log('✅ Response status:', response.status);
+      console.log('Response status:', response.status);
       return response.json();
     })
     .then(function(data) {
-      console.log('✅ Response data:', data);
+      console.log('Response data:', data);
       
       if (data.access_token || data.message === 'User created successfully') {
-        // Success
-        messageEl.textContent = '\u2713 You\'re on the list! Check your email for confirmation.';
+        messageEl.textContent = 'Success! You are on the list. Check your email for confirmation.';
         messageEl.style.color = 'var(--gold)';
         messageEl.style.display = 'block';
         emailInput.value = '';
       } else {
-        // Error
         messageEl.textContent = data.message || 'Something went wrong. Please try again.';
         messageEl.style.color = 'var(--brown-light)';
         messageEl.style.display = 'block';
       }
       
-      // Re-enable button
       submitBtn.disabled = false;
       submitBtn.textContent = 'Join Waitlist';
     })
     .catch(function(error) {
-      console.error('❌ Error:', error);
+      console.error('Error:', error);
       messageEl.textContent = 'Network error. Please check your connection and try again.';
       messageEl.style.color = 'var(--brown-light)';
       messageEl.style.display = 'block';
       
-      // Re-enable button
       submitBtn.disabled = false;
       submitBtn.textContent = 'Join Waitlist';
     });
@@ -910,7 +903,7 @@ reveals.forEach(el => observer.observe(el));
     return false;
   });
   
-  console.log('✅ Form handler attached successfully');
+  console.log('Form handler attached successfully');
 })();
 </script>
   
