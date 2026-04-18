@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frequently Asked Questions — diAry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-dark: #EDE7D9;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-dark: #A8863A;
+  --gold-pale: rgba(201,168,76,0.12);
+  --brown: #2C1A0E;
+  --brown-mid: #5C3D2A;
+  --brown-light: #8B6347;
+  --white: #FDFAF4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(245,240,232,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-size: 1.9rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brown-mid); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: var(--gold); }
+section { padding: 100px 10%; min-height: 100vh; }
+.section-tag {
+  font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px; display: block;
+}
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300; font-style: italic; line-height: 1.15;
+  color: var(--brown); margin-bottom: 20px;
+}
+.gold-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 48px;
+}
+.faq-content { max-width: 1000px; }
+.toc {
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  padding: 32px;
+  margin-bottom: 48px;
+  border-radius: 4px;
+}
+.toc h3 {
+  font-size: 1.3rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin-bottom: 20px;
+}
+.toc ul {
+  list-style: none; padding: 0;
+}
+.toc li {
+  margin-bottom: 12px;
+}
+.toc a {
+  font-size: 0.95rem; color: var(--brown-mid);
+  text-decoration: none; transition: color 0.2s;
+  display: block;
+}
+.toc a:hover { color: var(--gold-dark); }
+.faq-category {
+  margin: 64px 0;
+  scroll-margin-top: 100px;
+}
+.faq-category h2 {
+  font-size: 2rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gold-pale);
+}
+.faq-item {
+  margin-bottom: 32px;
+}
+.faq-question {
+  font-size: 1.2rem; font-weight: 500; font-style: italic;
+  color: var(--brown); margin-bottom: 12px;
+}
+.faq-answer {
+  font-size: 0.97rem; color: var(--brown-mid); font-weight: 300;
+  line-height: 1.8; padding-left: 20px;
+}
+.faq-answer p { margin-bottom: 12px; }
+.faq-answer ul, .faq-answer ol {
+  padding-left: 24px; margin-bottom: 16px;
+}
+.faq-answer li { margin-bottom: 8px; }
+.faq-answer strong { font-weight: 600; color: var(--brown); }
+.faq-answer a {
+  color: var(--gold-dark); text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  transition: border-color 0.2s;
+}
+.faq-answer a:hover { border-bottom-color: var(--gold-dark); }
+.divider {
+  width: 100%; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 48px 0;
+}
+.support-cta {
+  background: var(--gold-pale);
+  border: 1px solid var(--gold);
+  padding: 32px;
+  margin: 48px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+.support-cta h3 {
+  font-size: 1.5rem; font-style: italic; font-weight: 500;
+  color: var(--brown); margin-bottom: 12px;
+}
+.support-cta p {
+  font-size: 0.95rem; color: var(--brown-mid);
+  margin-bottom: 20px;
+}
+.support-cta a {
+  display: inline-block;
+  padding: 12px 32px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.support-cta a:hover { background: var(--gold-dark); }
+footer {
+  background: var(--brown); color: rgba(245,240,232,0.6);
+  padding: 36px 5%; text-align: center;
+}
+.footer-logo {
+  font-size: 2rem; font-style: italic; font-weight: 300;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px; display: block;
+}
+.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  section { padding: 80px 5%; }
+  .toc { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-transparent2.png" alt="diAry" style="height:145px;margin-top:40px;"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#download">Download</a></li>
+  </ul>
+</nav>
+
+<section>
+  <span class="section-tag">Support</span>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="gold-line"></div>
+  <p style="font-size:0.85rem;color:var(--brown-light);margin-bottom:40px;font-style:italic;">Last updated: April 19, 2026</p>
+  
+  <div class="faq-content">
+    
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <h3>Quick Navigation</h3>
+      <ul>
+        <li><a href="#getting-started">→ Account & Getting Started</a></li>
+        <li><a href="#features">→ Features & Functionality</a></li>
+        <li><a href="#subscriptions">→ Subscriptions & Billing</a></li>
+        <li><a href="#privacy">→ Privacy & Security</a></li>
+        <li><a href="#technical">→ Technical Support</a></li>
+        <li><a href="#data">→ Data & Account Management</a></li>
+      </ul>
+    </div>
+
+    <!-- GETTING STARTED -->
+    <div id="getting-started" class="faq-category">
+      <h2>Account & Getting Started</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">How do I create an account?</div>
+        <div class="faq-answer">
+          <p>Download diAry from the <strong>Apple App Store</strong> or <strong>Google Play Store</strong>, then open the app and follow the onboarding prompts. You can sign up using:</p>
+          <ul>
+            <li>Email address and password</li>
+            <li>Google account (Sign in with Google)</li>
+            <li>Apple ID (Sign in with Apple)</li>
+          </ul>
+          <p>Once registered, you'll have immediate access to the free tier. Upgrade to <strong>diAry Elite</strong> anytime for premium features.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What's the difference between diAry (free) and diAry Elite?</div>
+        <div class="faq-answer">
+          <p><strong>diAry (Free Tier):</strong></p>
+          <ul>
+            <li>Unlimited text entries</li>
+            <li>Local device storage only (no cloud sync)</li>
+            <li>Basic entry organization</li>
+          </ul>
+          <p><strong>diAry Elite ($9.99/month or $79.99/year):</strong></p>
+          <ul>
+            <li><strong>AI Transcription</strong> — intelligent transcription and contextual insights</li>
+            <li><strong>ICE Cam™ Security</strong> — encrypted biometric vault protection</li>
+            <li><strong>Voice Journaling</strong> — record audio entries on the go</li>
+            <li><strong>OCR Handwriting Recognition</strong> — convert handwritten notes to searchable text</li>
+            <li><strong>Cloud Sync</strong> — access your entries across all devices</li>
+            <li><strong>Advanced Search</strong> — semantic search powered by AI</li>
+            <li><strong>Priority Support</strong> — faster response times from our team</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is there a free trial?</div>
+        <div class="faq-answer">
+          <p>We may offer promotional free trials from time to time. Check the app's pricing page or our website for current offers. If a free trial is available, you'll see it displayed during the upgrade flow.</p>
+          <p><strong>Important:</strong> You must cancel before the trial ends to avoid being charged. See our <a href="refund.html">Refund Policy</a> for details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I use diAry on multiple devices?</div>
+        <div class="faq-answer">
+          <p><strong>Free Tier:</strong> Entries are stored locally on each device and do not sync.</p>
+          <p><strong>diAry Elite:</strong> Your entries automatically sync across all devices logged into the same account via secure cloud storage.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FEATURES -->
+    <div id="features" class="faq-category">
+      <h2>Features & Functionality</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What is AI Transcription and how does it work?</div>
+        <div class="faq-answer">
+          <p><strong>AI Transcription</strong> is diAry Elite's intelligent companion feature that:</p>
+          <ul>
+            <li>Analyzes your journal entries for themes, patterns, and insights</li>
+            <li>Provides contextual reflections and prompts for deeper thinking</li>
+            <li>Helps you track emotional patterns over time</li>
+            <li>Suggests journaling prompts based on your writing style</li>
+          </ul>
+          <p><strong>Privacy Note:</strong> AI Transcription processing happens in a secure, encrypted environment. Your entries are <strong>never</strong> shared with third parties or used to train external AI models. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is ICE Cam™ security?</div>
+        <div class="faq-answer">
+          <p><strong>ICE Cam™</strong> (Intruder Capture & Encryption Camera) is an advanced security feature exclusive to diAry Elite that:</p>
+          <ul>
+            <li>Locks your journal behind <strong>biometric authentication</strong> (Face ID, Touch ID, or fingerprint)</li>
+            <li>Captures a timestamped photo if someone attempts unauthorized access</li>
+            <li>Encrypts all entries with <strong>AES-256 encryption</strong></li>
+            <li>Stores intrusion attempts in a secure log for your review</li>
+          </ul>
+          <p>ICE Cam™ ensures your private thoughts remain completely private.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How does voice journaling work?</div>
+        <div class="faq-answer">
+          <p>Voice journaling allows you to record audio entries directly in the app. Features include:</p>
+          <ul>
+            <li>One-tap recording with high-quality audio</li>
+            <li>Automatic transcription to text (powered by AI Transcription)</li>
+            <li>Playback controls to review your recordings</li>
+            <li>Searchable audio transcripts</li>
+          </ul>
+          <p>Perfect for capturing thoughts when typing isn't convenient.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can diAry recognize my handwriting?</div>
+        <div class="faq-answer">
+          <p>Yes! <strong>OCR Handwriting Recognition</strong> (diAry Elite feature) lets you:</p>
+          <ul>
+            <li>Take a photo of handwritten notes</li>
+            <li>Convert them to editable, searchable text</li>
+            <li>Preserve the original image alongside the transcribed text</li>
+          </ul>
+          <p>Great for digitizing physical journals or quick handwritten notes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I search my past entries?</div>
+        <div class="faq-answer">
+          <p><strong>Free Tier:</strong> Basic keyword search within your entries.</p>
+          <p><strong>diAry Elite:</strong> Advanced semantic search powered by AI — search by concept, emotion, or theme, not just exact keywords.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I export my journal entries?</div>
+        <div class="faq-answer">
+          <p>Yes. Both free and Elite users can export their entries as:</p>
+          <ul>
+            <li><strong>PDF</strong> — beautifully formatted document</li>
+            <li><strong>Plain Text (.txt)</strong> — simple text file</li>
+            <li><strong>JSON</strong> — structured data for archiving or migration</li>
+          </ul>
+          <p>Go to <strong>Settings → Export Data</strong> to download your entries.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SUBSCRIPTIONS -->
+    <div id="subscriptions" class="faq-category">
+      <h2>Subscriptions & Billing</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">How much does diAry Elite cost?</div>
+        <div class="faq-answer">
+          <p>diAry Elite is available as:</p>
+          <ul>
+            <li><strong>Monthly:</strong> $9.99/month</li>
+            <li><strong>Annual:</strong> $79.99/year (save $39.89 — equivalent to $6.67/month)</li>
+          </ul>
+          <p>Pricing may vary by region and platform. Check the in-app pricing page for your local currency.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I upgrade to diAry Elite?</div>
+        <div class="faq-answer">
+          <p>In the app, go to <strong>Settings → Subscription → Upgrade to Elite</strong> and select your preferred plan (monthly or annual). Payment is processed through your Apple App Store or Google Play Store account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I cancel my subscription?</div>
+        <div class="faq-answer">
+          <p><strong>Apple App Store:</strong></p>
+          <ol>
+            <li>Open Settings on your iPhone/iPad</li>
+            <li>Tap [Your Name] → Subscriptions</li>
+            <li>Select <strong>diAry Elite</strong></li>
+            <li>Tap <strong>Cancel Subscription</strong></li>
+          </ol>
+          <p><strong>Google Play Store:</strong></p>
+          <ol>
+            <li>Open Google Play Store app</li>
+            <li>Tap Menu → Subscriptions</li>
+            <li>Select <strong>diAry Elite</strong></li>
+            <li>Tap <strong>Cancel Subscription</strong></li>
+          </ol>
+          <p><strong>In-App:</strong></p>
+          <p>Go to <strong>Settings → Subscription → Manage Subscription → Cancel</strong>.</p>
+          <p><strong>Note:</strong> Canceling stops future billing but does not refund the current period. You retain Elite access until the end of your billing cycle. See our <a href="refund.html">Refund Policy</a> for details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I get a refund?</div>
+        <div class="faq-answer">
+          <p>Our refund policy is strict: <strong>All subscription fees are non-refundable</strong> except in the case of total service failure (72+ hours of complete downtime).</p>
+          <p>For full details, including platform-specific refund processes (Apple/Google), please read our <a href="refund.html">Refund Policy</a>.</p>
+          <p><strong>Forgot to cancel?</strong> Unfortunately, forgetfulness is not grounds for a refund. We recommend setting a calendar reminder before your trial or billing period ends.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What happens if I downgrade to the free tier?</div>
+        <div class="faq-answer">
+          <p>When you cancel diAry Elite:</p>
+          <ul>
+            <li>You retain Elite features until the end of your current billing period</li>
+            <li>After the period ends, your account reverts to the free tier</li>
+            <li><strong>Your entries are preserved</strong> — you won't lose any data</li>
+            <li>Cloud sync stops — new entries won't sync across devices</li>
+            <li>Elite-only features (AI Transcription, ICE Cam™, voice journaling, OCR) become unavailable</li>
+          </ul>
+          <p>You can re-upgrade at any time to regain Elite access.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you offer student, military, or nonprofit discounts?</div>
+        <div class="faq-answer">
+          <p>We do not currently offer institutional discounts, but we occasionally run promotional pricing. Follow us on social media or subscribe to our email list for announcements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PRIVACY & SECURITY -->
+    <div id="privacy" class="faq-category">
+      <h2>Privacy & Security</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">Is my journal private?</div>
+        <div class="faq-answer">
+          <p><strong>Absolutely.</strong> Privacy is diAry's core value. Here's how we protect you:</p>
+          <ul>
+            <li><strong>End-to-end encryption:</strong> All entries are encrypted with AES-256</li>
+            <li><strong>Zero-knowledge architecture:</strong> We cannot read your entries — only you have the decryption keys</li>
+            <li><strong>No third-party sharing:</strong> Your data is never sold, shared, or used for advertising</li>
+            <li><strong>Biometric locks:</strong> ICE Cam™ (Elite) adds an extra layer of device-level security</li>
+          </ul>
+          <p>For complete details, read our <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can GMX Quantum (the company) read my journal?</div>
+        <div class="faq-answer">
+          <p><strong>No.</strong> diAry uses <strong>zero-knowledge encryption</strong>, meaning:</p>
+          <ul>
+            <li>Your entries are encrypted on your device before being uploaded</li>
+            <li>Only you hold the decryption keys</li>
+            <li>GMX Quantum employees, admins, and engineers <strong>cannot</strong> access your entries</li>
+          </ul>
+          <p>Even if legally compelled, we cannot provide readable journal content because we don't have access to it.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Does AI Transcription send my entries to OpenAI or ChatGPT?</div>
+        <div class="faq-answer">
+          <p><strong>No.</strong> AI Transcription processing happens in a secure, isolated environment controlled by GMX Quantum. Your entries:</p>
+          <ul>
+            <li>Are <strong>never</strong> sent to OpenAI, ChatGPT, or any third-party AI provider</li>
+            <li>Are <strong>never</strong> used to train external AI models</li>
+            <li>Remain encrypted and private throughout the AI analysis process</li>
+          </ul>
+          <p>See our <a href="privacy.html">Privacy Policy</a> for technical details on AI processing.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What happens to my data if GMX Quantum shuts down?</div>
+        <div class="faq-answer">
+          <p>You can <strong>export your data at any time</strong> (Settings → Export Data) as PDF, text, or JSON. We recommend backing up your entries regularly.</p>
+          <p>In the unlikely event of service shutdown, we will provide <strong>at least 90 days' notice</strong> and ensure users can export their data before services terminate.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is diAry GDPR and CCPA compliant?</div>
+        <div class="faq-answer">
+          <p>Yes. diAry complies with:</p>
+          <ul>
+            <li><strong>GDPR</strong> (General Data Protection Regulation) — <a href="gdpr-eu-ai-act.html">View GDPR Compliance</a></li>
+            <li><strong>CCPA/CPRA</strong> (California Consumer Privacy Act) — <a href="ccpa-cpra.html">View CCPA Compliance</a></li>
+          </ul>
+          <p>You have the right to access, delete, or export your data at any time. See our <a href="deletion.html">Data Deletion Policy</a> for instructions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Where is my data stored?</div>
+        <div class="faq-answer">
+          <p>diAry uses <strong>AWS (Amazon Web Services)</strong> infrastructure in secure, SOC 2 compliant data centers. All data is:</p>
+          <ul>
+            <li>Encrypted in transit (TLS 1.3)</li>
+            <li>Encrypted at rest (AES-256)</li>
+            <li>Stored in geographically redundant locations for reliability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- TECHNICAL SUPPORT -->
+    <div id="technical" class="faq-category">
+      <h2>Technical Support</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">The app won't sync my entries. What should I do?</div>
+        <div class="faq-answer">
+          <p>Try these troubleshooting steps:</p>
+          <ol>
+            <li><strong>Check your internet connection</strong> — sync requires active WiFi or cellular data</li>
+            <li><strong>Force quit and reopen the app</strong></li>
+            <li><strong>Verify you're logged into the same account</strong> on all devices</li>
+            <li><strong>Update to the latest app version</strong> (check App Store/Play Store)</li>
+            <li><strong>Check your subscription status</strong> — cloud sync is an Elite-only feature</li>
+          </ol>
+          <p>If the issue persists, contact <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a> with details (device model, OS version, app version).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">I forgot my password. How do I reset it?</div>
+        <div class="faq-answer">
+          <p>On the login screen, tap <strong>"Forgot Password?"</strong> and enter your email. You'll receive a password reset link within a few minutes. Check your spam folder if you don't see it.</p>
+          <p><strong>Note:</strong> For security reasons, we cannot manually reset passwords. You must use the automated reset process.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">The app crashes on launch. What should I do?</div>
+        <div class="faq-answer">
+          <p>Try these steps:</p>
+          <ol>
+            <li><strong>Restart your device</strong></li>
+            <li><strong>Update the app</strong> to the latest version</li>
+            <li><strong>Clear app cache</strong> (Settings → Apps → diAry → Clear Cache — Android only)</li>
+            <li><strong>Reinstall the app</strong> (your cloud-synced data won't be lost if you're an Elite subscriber)</li>
+          </ol>
+          <p>If crashes continue, email <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a> with your device details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">AI Transcription isn't working. Why?</div>
+        <div class="faq-answer">
+          <p>AI Transcription requires:</p>
+          <ul>
+            <li>An active <strong>diAry Elite</strong> subscription</li>
+            <li>A stable internet connection</li>
+            <li>Entries with at least 50 words for meaningful analysis</li>
+          </ul>
+          <p>If you meet these requirements and it's still not working, try:</p>
+          <ol>
+            <li>Force-closing and reopening the app</li>
+            <li>Checking for app updates</li>
+            <li>Contacting support at <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Which devices and operating systems does diAry support?</div>
+        <div class="faq-answer">
+          <p><strong>iOS:</strong> iPhone and iPad running iOS 14.0 or later</p>
+          <p><strong>Android:</strong> Devices running Android 8.0 (Oreo) or later</p>
+          <p>For the best experience, we recommend keeping your OS updated to the latest version.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is there a desktop or web version?</div>
+        <div class="faq-answer">
+          <p>Currently, diAry is available only as a <strong>mobile app</strong> (iOS and Android). We're exploring desktop and web versions for future releases — stay tuned!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- DATA & ACCOUNT MANAGEMENT -->
+    <div id="data" class="faq-category">
+      <h2>Data & Account Management</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">How do I delete my account?</div>
+        <div class="faq-answer">
+          <p>To permanently delete your account and all associated data:</p>
+          <ol>
+            <li>Open diAry and go to <strong>Settings → Account</strong></li>
+            <li>Scroll to <strong>Delete Account</strong></li>
+            <li>Read the warning (this action is irreversible)</li>
+            <li>Confirm deletion</li>
+          </ol>
+          <p><strong>Warning:</strong> Account deletion is <strong>permanent and irreversible</strong>. All entries, voice recordings, and data will be permanently erased within 30 days. Export your data first if you want to keep a copy.</p>
+          <p>See our <a href="deletion.html">Data Deletion Policy</a> for full details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I change my email address?</div>
+        <div class="faq-answer">
+          <p>Go to <strong>Settings → Account → Email Address</strong> and follow the prompts to update your email. You'll need to verify the new email address before the change takes effect.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Can I transfer my journal to another account?</div>
+        <div class="faq-answer">
+          <p>Journal entries cannot be directly transferred between accounts. However, you can:</p>
+          <ol>
+            <li>Export your entries from the original account (Settings → Export Data)</li>
+            <li>Manually re-import or copy-paste entries into the new account</li>
+          </ol>
+          <p>For assistance with large migrations, contact <a href="mailto:support@gmxquantum.com">support@gmxquantum.com</a>.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What happens to my data if I stop paying for Elite?</div>
+        <div class="faq-answer">
+          <p>Your journal entries are <strong>never deleted</strong> when you downgrade. However:</p>
+          <ul>
+            <li>Cloud sync stops (new entries won't sync across devices)</li>
+            <li>AI Transcription, ICE Cam™, voice journaling, and OCR become unavailable</li>
+            <li>Existing voice recordings and OCR-transcribed notes remain accessible</li>
+          </ul>
+          <p>You can re-upgrade at any time to restore Elite features.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SUPPORT CTA -->
+    <div class="support-cta">
+      <h3>Still have questions?</h3>
+      <p>Our support team is here to help. Email us anytime.</p>
+      <a href="mailto:support@gmxquantum.com">Contact Support</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo"><img src="logo-transparent2.png" alt="diAry" style="height:220px;"></span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="faq.html">FAQ</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="deletion.html">Data Deletion</a>
+  </div>
+  <p class="footer-copy">© 2026 GMX Quantum LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
