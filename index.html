@@ -884,14 +884,10 @@ reveals.forEach(el => observer.observe(el));
     submitBtn.disabled = true;
     submitBtn.textContent = 'Joining...';
     
-    fetch('https://api.diary.gmxquantum.com/api/auth/register', {
+    fetch('https://api.diary.gmxquantum.com/api/auth/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email,
-        password: 'WebSignup2026!' + Math.random().toString(36).substring(2, 10),
-        fullname: 'Website Subscriber'
-      })
+      body: JSON.stringify({ email: email })
     })
     .then(function(response) {
       console.log('Response status:', response.status);
@@ -900,13 +896,21 @@ reveals.forEach(el => observer.observe(el));
     .then(function(data) {
       console.log('Response data:', data);
       
-      if (data.access_token || data.message === 'User created successfully') {
-        messageEl.textContent = 'Success! You are on the list. Check your email for confirmation.';
-        messageEl.style.color = 'var(--gold)';
+      if (data.success) {
+        messageEl.innerHTML = '✦ You are on the list! We will notify you when <em>diAry</em> launches on iOS.';
+        messageEl.style.color = 'var(--gold-dark)';
+        messageEl.style.fontSize = '1.05rem';
+        messageEl.style.fontStyle = 'italic';
+        messageEl.style.letterSpacing = '0.03em';
+        messageEl.style.marginTop = '20px';
+        messageEl.style.padding = '16px 24px';
+        messageEl.style.border = '1px solid rgba(201,168,76,0.4)';
+        messageEl.style.borderRadius = '12px';
+        messageEl.style.background = 'rgba(201,168,76,0.08)';
         messageEl.style.display = 'block';
         emailInput.value = '';
       } else {
-        messageEl.textContent = data.message || 'Something went wrong. Please try again.';
+        messageEl.textContent = data.error?.message || 'Something went wrong. Please try again.';
         messageEl.style.color = 'var(--brown-light)';
         messageEl.style.display = 'block';
       }
@@ -930,6 +934,6 @@ reveals.forEach(el => observer.observe(el));
   console.log('Form handler attached successfully');
 })();
 </script>
-  
+
 </body>
 </html>
