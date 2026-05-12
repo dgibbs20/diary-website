@@ -6,7 +6,7 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1024px; height: 1024px; overflow: hidden; background: #F7F0E6; }
- 
+
   .card {
     width: 1024px;
     height: 1024px;
@@ -18,7 +18,7 @@
     position: relative;
     font-family: 'Cormorant Garamond', Georgia, serif;
   }
- 
+
   /* Subtle texture overlay */
   .card::before {
     content: '';
@@ -27,7 +27,7 @@
     background: radial-gradient(ellipse at 30% 20%, rgba(217,178,108,0.12) 0%, transparent 60%),
                 radial-gradient(ellipse at 70% 80%, rgba(138,90,60,0.08) 0%, transparent 50%);
   }
- 
+
   /* Top decorative border */
   .top-bar {
     position: absolute;
@@ -35,7 +35,7 @@
     height: 6px;
     background: linear-gradient(90deg, #8A5A3C, #D9B26C, #8A5A3C);
   }
- 
+
   /* Corner ornaments */
   .corner {
     position: absolute;
@@ -48,7 +48,7 @@
   .corner.tr { top: 32px; right: 32px; border-width: 1px 1px 0 0; }
   .corner.bl { bottom: 32px; left: 32px; border-width: 0 0 1px 1px; }
   .corner.br { bottom: 32px; right: 32px; border-width: 0 1px 1px 0; }
- 
+
   .inner {
     position: relative;
     z-index: 1;
@@ -57,7 +57,7 @@
     align-items: center;
     gap: 0;
   }
- 
+
   .wordmark {
     font-size: 72px;
     font-weight: 300;
@@ -66,14 +66,14 @@
     margin-bottom: 8px;
   }
   .wordmark em { font-style: italic; }
- 
+
   .divider-top {
     width: 80px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #D9B26C, transparent);
     margin-bottom: 40px;
   }
- 
+
   .tier-label {
     font-size: 13px;
     font-weight: 600;
@@ -83,7 +83,7 @@
     font-family: -apple-system, sans-serif;
     margin-bottom: 24px;
   }
- 
+
   .plan-name {
     font-size: 88px;
     font-weight: 300;
@@ -92,7 +92,7 @@
     line-height: 1;
     margin-bottom: 48px;
   }
- 
+
   .price-wrap {
     display: flex;
     align-items: flex-start;
@@ -119,14 +119,14 @@
     margin-bottom: 18px;
     font-style: italic;
   }
- 
+
   .divider-mid {
     width: 120px;
     height: 1px;
     background: linear-gradient(90deg, transparent, #D9B26C, transparent);
     margin: 32px 0;
   }
- 
+
   .tagline {
     font-size: 32px;
     font-weight: 300;
@@ -134,7 +134,7 @@
     color: #7B6A58;
     margin-bottom: 40px;
   }
- 
+
   .features {
     display: flex;
     flex-direction: column;
@@ -156,7 +156,7 @@
     border-radius: 50%;
     background: #D9B26C;
   }
- 
+
   .badge {
     position: absolute;
     bottom: 64px;
@@ -177,9 +177,9 @@
   <div class="corner tr"></div>
   <div class="corner bl"></div>
   <div class="corner br"></div>
- 
+
   <div class="inner">
-    <img src="https://diary.gmxquantum.com/logo-transparent2.png" alt="diAry" height="145" style="display:block;" />
+    <div class="wordmark">di<em>A</em>ry</div>
     <div class="divider-top"></div>
     <div class="tier-label">Elite Membership</div>
     <div class="plan-name">Monthly</div>
@@ -197,7 +197,7 @@
       <div class="feature"><span class="dot"></span> Cancel Anytime</div>
     </div>
   </div>
- 
+
   <div class="badge">GMX Quantum LLC</div>
 </div>
 </body>
