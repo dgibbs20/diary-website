@@ -428,44 +428,48 @@ function enterSite() {
     <h2 class="section-title">Designed for<br>your most private moments</h2>
   </div>
  
-  <!-- Row 1: images 6-10 (1284x2778 portrait) — height = 43.27vw to perfectly fill 5 columns -->
-  <div class="reveal" style="display:flex;width:100%;height:43.27vw;">
-    <div style="flex:1;overflow:hidden;">
-      <img src="6.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="7.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="8.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="9.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="10.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-  </div>
+  <!-- Both rows wrapped in ONE reveal div so they animate together and never overlap -->
+  <div class="reveal">
  
-  <!-- Row 2: images 1-5 (2064x2752 collage cards) — height = 26.67vw to perfectly fill 5 columns -->
-  <div class="reveal" style="display:flex;width:100%;height:26.67vw;">
-    <div style="flex:1;overflow:hidden;">
-      <img src="1.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+    <!-- Row 1: images 1-5 (2064x2752) — height = 26.67vw -->
+    <div style="display:flex;width:100%;height:26.67vw;">
+      <div style="flex:1;overflow:hidden;">
+        <img src="1.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="2.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="3.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="4.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="5.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
     </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="2.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="3.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="4.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-    <div style="flex:1;overflow:hidden;">
-      <img src="5.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
-    </div>
-  </div>
  
+    <!-- Row 2: images 6-10 (1284x2778) — height = 43.27vw -->
+    <div style="display:flex;width:100%;height:43.27vw;">
+      <div style="flex:1;overflow:hidden;">
+        <img src="6.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="7.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="8.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="9.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+      <div style="flex:1;overflow:hidden;">
+        <img src="10.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+      </div>
+    </div>
+ 
+  </div>
 </section>
 
 <!-- ===== FEATURES (REPLACE ENTIRE SECTION) ===== -->
