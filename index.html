@@ -22,45 +22,7 @@
 <meta name="twitter:description" content="Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever." />
 <meta name="twitter:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
 
-<!-- SEO: Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "diAry",
-  "operatingSystem": "ANDROID, IOS",
-  "applicationCategory": "LifestyleApplication",
-  "offers": [
-    {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "name": "diAry Free"
-    },
-    {
-      "@type": "Offer",
-      "price": "9.99",
-      "priceCurrency": "USD",
-      "name": "diAry Elite Monthly"
-    },
-    {
-      "@type": "Offer",
-      "price": "79.99",
-      "priceCurrency": "USD",
-      "name": "diAry Elite Annual"
-    }
-  ],
-  "description": "AI-powered private journaling app with voice transcription, handwriting recognition, Ghost Mode, Burn Mode, and biometric security.",
-  "url": "https://diary.gmxquantum.com",
-  "publisher": {
-    "@type": "Organization",
-    "name": "GMX Quantum LLC",
-    "url": "https://gmxquantum.com"
-  }
-}
-</script>  
-  
-<title>Ai Journal & Companion</title>
+<title>diAry — AI-Powered Private Journal App</title>
 <meta name="description" content="diAry — The AI-powered private journal. Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever." />
 <meta name="theme-color" content="#F5F0E8" />
 <link rel="icon" type="image/png" href="logo-transparent2.png" />
@@ -472,7 +434,7 @@ function enterSite() {
   </div>
 </section>
 
-<!-- ===== FEATURES (REPLACE ENTIRE SECTION) ===== -->
+<!-- ===== FEATURES ===== -->
 <section id="features">
   <div class="reveal">
     <span class="section-tag">What Makes diAry Different</span>
@@ -581,7 +543,7 @@ function enterSite() {
 </section>
  
  
-<!-- ===== PRICING (REPLACE ENTIRE SECTION) ===== -->
+<!-- ===== PRICING ===== -->
 <section id="pricing">
   <div class="reveal">
     <span class="section-tag">Plans & Pricing</span>
@@ -987,8 +949,6 @@ reveals.forEach(el => observer.observe(el));
 <!-- Email List Handler -->
 <script>
 (function() {
-  console.log('Script is executing');
-  
   var form = document.getElementById('waitlist-form');
   
   if (!form) {
@@ -996,21 +956,15 @@ reveals.forEach(el => observer.observe(el));
     return;
   }
   
-  console.log('Form found, attaching handler');
-  
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    
-    console.log('Form submit prevented, starting fetch...');
     
     var emailInput = document.getElementById('waitlist-email');
     var messageEl = document.getElementById('waitlist-message');
     var submitBtn = form.querySelector('button[type="submit"]');
     
     var email = emailInput.value;
-    
-    console.log('Email captured:', email);
     
     submitBtn.disabled = true;
     submitBtn.textContent = 'Joining...';
@@ -1021,14 +975,11 @@ reveals.forEach(el => observer.observe(el));
       body: JSON.stringify({ email: email })
     })
     .then(function(response) {
-      console.log('Response status:', response.status);
       return response.json();
     })
     .then(function(data) {
-      console.log('Response data:', data);
-      
       if (data.success) {
-        messageEl.innerHTML = '✦ You are on the list! We will notify you when <em>diAry</em> launches on iOS.';
+        messageEl.innerHTML = '✦ You are on the list! We will notify you the moment <em>diAry</em> has news to share.';
         messageEl.style.color = 'var(--gold-dark)';
         messageEl.style.fontSize = '1.05rem';
         messageEl.style.fontStyle = 'italic';
@@ -1047,7 +998,7 @@ reveals.forEach(el => observer.observe(el));
       }
       
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Join Waitlist';
+      submitBtn.textContent = 'Join Email List';
     })
     .catch(function(error) {
       console.error('Error:', error);
@@ -1056,15 +1007,52 @@ reveals.forEach(el => observer.observe(el));
       messageEl.style.display = 'block';
       
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Join Waitlist';
+      submitBtn.textContent = 'Join Email List';
     });
     
     return false;
   });
-  
-  console.log('Form handler attached successfully');
 })();
 </script>
 
+<!-- SEO: Structured Data (single source of truth) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://diary.gmxquantum.com/#organization",
+      "name": "GMX Quantum LLC",
+      "url": "https://diary.gmxquantum.com/",
+      "logo": "https://diary.gmxquantum.com/logo-transparent2.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://diary.gmxquantum.com/#website",
+      "url": "https://diary.gmxquantum.com/",
+      "name": "diAry",
+      "publisher": { "@id": "https://diary.gmxquantum.com/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://diary.gmxquantum.com/#app",
+      "name": "diAry",
+      "description": "diAry is an AI-powered private journal. Write, speak, or draw your entries and an AI companion responds with warmth, reflection, or insight. Features include Ghost Mode, Burn Mode, biometric lock, mood tracking, and 11 AI voices across 29 languages. Free to download, with an optional diAry Elite subscription ($9.99/month or $79.99/year).",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "LifestyleApplication",
+      "url": "https://diary.gmxquantum.com/",
+      "image": "https://diary.gmxquantum.com/logo-transparent2.png",
+      "publisher": { "@id": "https://diary.gmxquantum.com/#organization" },
+      "offers": [
+        { "@type": "Offer", "name": "diAry Free", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "diAry Elite Monthly", "price": "9.99", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "diAry Elite Annual", "price": "79.99", "priceCurrency": "USD" }
+      ]
+    }
+  ]
+}
+</script>
+  
 </body>
 </html>
