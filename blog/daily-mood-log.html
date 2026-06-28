@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is a Daily Mood Log — and Why You Need One — diAry</title>
+  <meta name="description" content="Your emotional patterns tell a story your daily self can't see. Here's what a daily mood log is, what the research says, and how diAry's 32-emotion tracker reveals what's actually going on beneath the surface." />
+  <meta name="keywords" content="daily mood log, mood tracking app, emotional pattern tracking, mood journal app, mood diary app, mental health tracking app" />
+  <meta property="og:title" content="What Is a Daily Mood Log — and Why You Need One — diAry" />
+  <meta property="og:description" content="Your emotional patterns tell a story your daily self can't see. Here's what a daily mood log is and why it matters." />
+  <meta property="og:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
+  <meta property="og:url" content="https://diary.gmxquantum.com/blog/daily-mood-log.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://diary.gmxquantum.com/blog/daily-mood-log.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --cream-dark: #EDE6D6;
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --charcoal: #1A1A1A;
+      --charcoal-mid: #2C2C2C;
+      --text-body: #3A3530;
+      --text-muted: #7A7060;
+      --white: #FFFFFF;
+      --border: rgba(201,168,76,0.25);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--text-body); line-height: 1.8; }
+    nav { background: var(--charcoal); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+    nav .logo img { height: 36px; display: block; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: var(--cream); text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; letter-spacing: 0.04em; opacity: 0.8; transition: opacity 0.2s; }
+    nav ul a:hover { opacity: 1; color: var(--gold-light); }
+    .nav-cta { background: var(--gold); color: var(--charcoal) !important; padding: 0.45rem 1.1rem; border-radius: 4px; font-weight: 700; opacity: 1 !important; font-size: 0.82rem !important; letter-spacing: 0.06em !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .blog-breadcrumb { background: var(--cream-dark); border-bottom: 1px solid var(--border); padding: 0.75rem 2rem; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.8rem; color: var(--text-muted); }
+    .blog-breadcrumb a { color: var(--gold); text-decoration: none; }
+    .hero { background: var(--charcoal); padding: 5rem 2rem 4rem; text-align: center; border-bottom: 1px solid var(--border); }
+    .hero .eyebrow { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--cream); font-weight: 400; line-height: 1.25; max-width: 780px; margin: 0 auto 1.5rem; }
+    .hero .meta { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.05em; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+    article { padding: 4rem 0 5rem; }
+    article h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; font-weight: 400; color: var(--charcoal); margin: 3rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    article h3 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; margin: 2rem 0 0.6rem; }
+    article p { margin-bottom: 1.4rem; font-size: 1.05rem; }
+    article p:first-of-type { font-size: 1.15rem; color: var(--charcoal-mid); }
+
+    .emotion-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin: 2rem 0; }
+    .emotion-chip { background: var(--white); border: 1px solid var(--border); border-radius: 50px; padding: 0.5rem 0.8rem; text-align: center; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.78rem; color: var(--text-body); }
+    .emotion-chip .emoji { display: block; font-size: 1.2rem; margin-bottom: 0.2rem; }
+
+    .steps { margin: 2rem 0; }
+    .step { display: flex; gap: 1.2rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .step-number { background: var(--gold); color: var(--charcoal); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 0.2rem; }
+    .step-content h4 { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.3rem; }
+    .step-content p { font-size: 0.92rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+    .callout { background: var(--charcoal); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 1.8rem 2rem; margin: 2.5rem 0; }
+    .callout p { color: var(--cream); margin: 0; font-size: 1.05rem; font-style: italic; }
+    .callout .attribution { font-style: normal; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.8rem; color: var(--gold-light); margin-top: 0.8rem; letter-spacing: 0.05em; }
+
+    .cta-section { background: var(--charcoal); border-radius: 12px; padding: 3rem 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-section .tagline { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.8rem; font-weight: 400; color: var(--cream); margin-bottom: 0.8rem; border: none; padding: 0; }
+    .cta-section p { color: rgba(245,240,232,0.7); font-size: 0.95rem; margin-bottom: 2rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: var(--charcoal); padding: 0.85rem 2rem; border-radius: 6px; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary { background: transparent; color: var(--cream); padding: 0.85rem 2rem; border-radius: 6px; border: 1px solid var(--border); text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.9rem; transition: border-color 0.2s; }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    footer { background: var(--charcoal); color: var(--cream); text-align: center; padding: 2.5rem 2rem; border-top: 1px solid var(--border); }
+    footer img { height: 32px; margin-bottom: 1rem; opacity: 0.8; }
+    footer nav ul { justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.2rem; }
+    footer nav ul a { font-size: 0.8rem; }
+    footer .copyright { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .emotion-grid { grid-template-columns: repeat(3, 1fr); }
+      .hero { padding: 3.5rem 1.5rem 3rem; }
+      article { padding: 2.5rem 0 3rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is a Daily Mood Log — and Why You Need One",
+    "description": "Your emotional patterns tell a story your daily self can't see. Here's what a daily mood log is and how diAry's 32-emotion tracker reveals what's beneath the surface.",
+    "author": { "@type": "Person", "name": "Derrick K. Gibbs-McGlaston" },
+    "publisher": { "@type": "Organization", "name": "GMX Quantum LLC", "logo": { "@type": "ImageObject", "url": "https://diary.gmxquantum.com/logo-transparent2.png" } },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "image": "https://diary.gmxquantum.com/logo-transparent2.png",
+    "url": "https://diary.gmxquantum.com/blog/daily-mood-log.html"
+  }
+  </script>
+</head>
+
+<body>
+
+  <nav>
+    <a class="logo" href="https://diary.gmxquantum.com/"><img src="https://diary.gmxquantum.com/logo-transparent2.png" alt="diAry" /></a>
+    <ul>
+      <li><a href="https://diary.gmxquantum.com/#features">Features</a></li>
+      <li><a href="https://diary.gmxquantum.com/#pricing">Pricing</a></li>
+      <li><a href="https://diary.gmxquantum.com/blog/">Blog</a></li>
+      <li><a href="https://diary.gmxquantum.com/faq.html">FAQ</a></li>
+      <li><a href="https://diary.gmxquantum.com/#download" class="nav-cta">Download Free</a></li>
+    </ul>
+  </nav>
+
+  <div class="blog-breadcrumb">
+    <a href="https://diary.gmxquantum.com/">Home</a> &rsaquo;
+    <a href="https://diary.gmxquantum.com/blog/">Blog</a> &rsaquo;
+    What Is a Daily Mood Log — and Why You Need One
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">Mood Tracking · Emotional Intelligence</p>
+    <h1>What Is a Daily Mood Log —<br>and Why You Need One</h1>
+    <p class="meta">By Derrick K. Gibbs-McGlaston &nbsp;·&nbsp; June 28, 2026 &nbsp;·&nbsp; 5 min read</p>
+  </div>
+
+  <div class="container">
+    <article>
+
+      <p>Most people have no idea what their emotional patterns actually look like. They know they feel anxious sometimes. They know certain situations drain them. They know some weeks feel heavier than others. But they can't tell you why — or when it started — or what's actually triggering it.</p>
+
+      <p>A daily mood log changes that. Not by solving anything. By making the invisible visible.</p>
+
+      <h2>What Is a Daily Mood Log?</h2>
+
+      <p>A daily mood log is exactly what it sounds like — a consistent, daily record of your emotional state. At its simplest, it's a habit of pausing once a day and asking: how am I actually feeling right now?</p>
+
+      <p>The power isn't in any single entry. It's in the pattern that emerges over time. One day of data tells you nothing. Thirty days tells you something. Ninety days tells you the truth.</p>
+
+      <h3>What a mood log captures</h3>
+      <p>At minimum, a mood log captures your emotional state at a specific point in time. More sophisticated systems — like diAry — also capture the nuance of that emotion, the context around it, and how it connects to what you wrote in your journal entry that day.</p>
+
+      <h2>Why 32 Emotions Instead of Five</h2>
+
+      <p>Most mood tracking apps give you five or six emoji faces to choose from. Happy. Sad. Angry. Anxious. Neutral. That's not emotional intelligence. That's a children's book.</p>
+
+      <p>Human emotional experience is vastly more nuanced than five states. The difference between feeling melancholy and feeling depressed matters. The difference between feeling restless and feeling anxious matters. The difference between feeling content and feeling genuinely joyful matters — especially when you're trying to identify what's actually going on in your life.</p>
+
+      <p>diAry tracks 32 distinct emotional states so your log is actually accurate:</p>
+
+      <div class="emotion-grid">
+        <div class="emotion-chip"><span class="emoji">😊</span>Happy</div>
+        <div class="emotion-chip"><span class="emoji">😔</span>Sad</div>
+        <div class="emotion-chip"><span class="emoji">😤</span>Angry</div>
+        <div class="emotion-chip"><span class="emoji">😰</span>Anxious</div>
+        <div class="emotion-chip"><span class="emoji">😌</span>Peaceful</div>
+        <div class="emotion-chip"><span class="emoji">🥺</span>Vulnerable</div>
+        <div class="emotion-chip"><span class="emoji">😤</span>Frustrated</div>
+        <div class="emotion-chip"><span class="emoji">🥰</span>Loved</div>
+        <div class="emotion-chip"><span class="emoji">😶</span>Numb</div>
+        <div class="emotion-chip"><span class="emoji">😮</span>Surprised</div>
+        <div class="emotion-chip"><span class="emoji">😴</span>Exhausted</div>
+        <div class="emotion-chip"><span class="emoji">✨</span>Inspired</div>
+        <div class="emotion-chip"><span class="emoji">😞</span>Disappointed</div>
+        <div class="emotion-chip"><span class="emoji">🤔</span>Confused</div>
+        <div class="emotion-chip"><span class="emoji">🙏</span>Grateful</div>
+        <div class="emotion-chip"><span class="emoji">😟</span>Overwhelmed</div>
+      </div>
+
+      <h2>What a Mood Log Actually Reveals</h2>
+
+      <h3>Triggers you didn't know you had</h3>
+      <p>When you can see thirty days of emotional data side by side, patterns emerge that are invisible in the moment. Sunday evenings consistently show anxiety. Monday mornings show a spike in frustration. Thursday afternoons are when you feel most like yourself. These patterns, once visible, give you actual agency over your emotional life.</p>
+
+      <h3>The lag between events and emotions</h3>
+      <p>One of the most important things a mood log reveals is that emotions often don't arrive when the event does. The stress of a difficult conversation on Tuesday might show up as anxiety on Thursday. The grief of a loss might be suppressed for weeks before it surfaces. Seeing your emotional data over time helps you connect dots that felt unconnected in the moment.</p>
+
+      <h3>What's actually working</h3>
+      <p>Mood logs don't just reveal problems. They reveal what's helping. Exercise days, quality sleep, meaningful conversations, time alone — these show up in your data as clearly as the stressors do. Your mood log becomes a map of what your specific nervous system actually needs.</p>
+
+      <div class="callout">
+        <p>"Mood analytics show you what you didn't see coming."</p>
+        <p class="attribution">— diAry</p>
+      </div>
+
+      <h2>How to Start a Daily Mood Log</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Pick a consistent time</h4>
+            <p>Morning captures your baseline. Evening captures your reflection. Either works — consistency matters more than timing. diAry prompts you at the same time every day so the habit builds itself.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Be specific about the emotion</h4>
+            <p>Don't settle for "fine" or "okay." Those aren't emotions — they're emotional avoidance. Pick the word that's actually true, even if it's uncomfortable. That specificity is what makes the data meaningful.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Write at least one sentence</h4>
+            <p>The emotion without context is a data point. The emotion with a sentence of context is a story. Even one sentence — "I feel anxious because I have a hard conversation tomorrow" — turns your mood log into something you can actually learn from.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Review weekly</h4>
+            <p>Spend five minutes every Sunday looking at your week. What patterns do you see? What surprised you? The review is where the insight lives — not the logging itself.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Why diAry's Mood Tracking Goes Deeper</h2>
+
+      <p>Most mood apps track your emotion and stop there. diAry connects your mood to your journal entry — so your AI companion can see both what you felt and what you wrote about that day. Over time, your companion begins to recognize your patterns before you do, surfacing insights in your analytics that you would have missed on your own.</p>
+
+      <p>Your emotional journey isn't a series of isolated moments. It's a narrative. diAry treats it that way.</p>
+
+      <div class="cta-section">
+        <p class="tagline">32 Emotions. Real Patterns. Actual Insight.</p>
+        <h2>Start tracking what you actually feel.</h2>
+        <p>Download diAry free. Mood tracking is included at no cost — no trial required, no expiration.</p>
+        <div class="cta-buttons">
+          <a href="https://apps.apple.com/us/app/diary-ai-journal-companion/id6764833139" class="btn-primary">Download on iOS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.gmxquantum.diary" class="btn-primary">Download on Android</a>
+          <a href="https://diary.gmxquantum.com/#features" class="btn-secondary">See All Features</a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <nav>
+      <img src="https://diary.gmxquantum.com/logo-transparent2.png" alt="diAry" /><br />
+      <ul>
+        <li><a href="https://diary.gmxquantum.com/">Home</a></li>
+        <li><a href="https://diary.gmxquantum.com/blog/">Blog</a></li>
+        <li><a href="https://diary.gmxquantum.com/faq.html">FAQ</a></li>
+        <li><a href="https://diary.gmxquantum.com/terms.html">Terms</a></li>
+        <li><a href="https://diary.gmxquantum.com/privacy.html">Privacy</a></li>
+        <li><a href="https://diary.gmxquantum.com/#download">Download</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">© 2026 GMX Quantum LLC. All rights reserved. A GMCG Holdings Inc. company.</p>
+  </footer>
+
+</body>
+</html>
