@@ -12,18 +12,18 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://diary.gmxquantum.com/" />
 <meta property="og:title" content="diAry — Your AI-Powered Private Journal" />
-<meta property="og:description" content="Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever. AI journaling with Ghost Mode, Burn Mode, and biometric security." />
+<meta property="og:description" content="Write it, speak it, draw it, upload it — or talk it through in Conversation Mode. Six ways to journal, ICE Cam protection, 29 languages, and diAry online for desktop." />
 <meta property="og:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
 <meta property="og:site_name" content="diAry" />
 
 <!-- SEO: Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="diAry — Your AI-Powered Private Journal" />
-<meta name="twitter:description" content="Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever." />
+<meta name="twitter:description" content="Write it, speak it, draw it, upload it — or talk it through. diAry listens with warmth and keeps your secrets forever." />
 <meta name="twitter:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
 
 <title>diAry — AI-Powered Private Journal App</title>
-<meta name="description" content="diAry — The AI-powered private journal. Write it, speak it, draw it — diAry listens with warmth and keeps your secrets forever." />
+<meta name="description" content="diAry — The AI-powered private journal. Write it, speak it, draw it, upload it — or talk it through in Conversation Mode. Six ways to journal, ICE Cam protection, 29 languages, and diAry online for desktop." />
 <meta name="theme-color" content="#F5F0E8" />
 <link rel="icon" type="image/png" href="logo-transparent2.png" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -194,6 +194,12 @@ section { padding: 100px 5%; }
 }
 .feature-title { font-size: 1.25rem; font-weight: 500; font-style: italic; color: var(--brown); margin-bottom: 10px; }
 .feature-desc { font-size: 0.95rem; color: var(--brown-light); font-weight: 300; line-height: 1.75; }
+.new-badge {
+  display: inline-block; margin-left: 8px; vertical-align: middle;
+  background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.35);
+  color: var(--gold-dark); padding: 2px 10px; border-radius: 40px;
+  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; font-style: normal;
+}
 #how-it-works { background: var(--cream-dark); }
 .steps { display: flex; flex-direction: column; gap: 0; max-width: 720px; }
 .step { display: flex; gap: 28px; align-items: flex-start; padding: 36px 0; position: relative; }
@@ -232,6 +238,13 @@ section { padding: 100px 5%; }
   height: 100%; 
   border: none; 
   display: block; 
+}
+#diary-online { text-align: center; }
+.online-box {
+  max-width: 860px; margin: 0 auto;
+  background: var(--white); border: 2px solid rgba(201,168,76,0.4);
+  border-radius: 20px; padding: 56px 48px;
+  background: linear-gradient(135deg, var(--white) 0%, rgba(201,168,76,0.04) 100%);
 }
 #download { background: var(--cream-dark); text-align: center; }
 .download-cards { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 60px; }
@@ -310,6 +323,7 @@ footer {
   .nav-links { display: none; }
   section { padding: 72px 5%; }
   .contact-box { padding: 40px 24px; }
+  .online-box { padding: 40px 24px; }
   .download-cards { display: grid; grid-template-columns: 1fr; }
 }
 </style>
@@ -359,6 +373,7 @@ function enterSite() {
     <li><a href="#screenshots">Screenshots</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#diary-online">diAry Online</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="#privacy">Privacy</a></li>
@@ -372,7 +387,8 @@ function enterSite() {
   <p class="hero-tag">The AI-Powered Private Journal</p>
   <h1 class="hero-logo"><img src="logo-transparent2.png" alt="diAry" style="height:300px;max-width:550px;filter:drop-shadow(0 8px 24px rgba(201,168,76,0.3));"></h1>
   <p class="hero-tagline">"I'll never tell..."</p>
-  <p class="hero-sub">Your thoughts deserve a space that truly understands them. Write it, speak it, draw it, diAry listens with warmth and keeps your secrets forever.</p>
+  <p class="hero-sub">Your thoughts deserve a space that truly understands them. Write it, speak it, draw it, upload it — or just talk, and diAry talks back. It listens with warmth and keeps your secrets forever.</p>
+  <p style="font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin:-28px auto 44px;animation:fadeUp 0.9s ease 0.62s both;">New — Conversation Mode &nbsp;·&nbsp; ICE Cam &nbsp;·&nbsp; Journal Import &nbsp;·&nbsp; diAry Online</p>
   <div class="hero-btns">
     <a href="#download" class="btn-primary">Download Now</a>
     <a href="#features" class="btn-secondary">Explore Features</a>
@@ -393,18 +409,18 @@ function enterSite() {
  
   <div class="reveal">
     <div style="display:flex;width:100%;height:26.67vw;">
-      <div style="flex:1;overflow:hidden;"><img src="1.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="2.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="3.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="4.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="5.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_home.png" alt="diAry home screen" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_mood.png" alt="Mood check-in" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_voice_journaling.png" alt="Voice journaling" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_text_chat.png" alt="Text chat with AI companion" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_conversation_mode.png" alt="Conversation Mode" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
     </div>
     <div style="display:flex;width:100%;height:43.27vw;">
-      <div style="flex:1;overflow:hidden;"><img src="6.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="7.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="8.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="9.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
-      <div style="flex:1;overflow:hidden;"><img src="10.png" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_handwriting.png" alt="Handwritten journal" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_import.png" alt="Camera and file import" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_ice_cam.png" alt="ICE Cam security" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_languages.png" alt="29 languages" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+      <div style="flex:1;overflow:hidden;"><img src="diary_analytics.png" alt="Analytics and insights" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
     </div>
   </div>
 </section>
@@ -417,9 +433,21 @@ function enterSite() {
     <div class="gold-line"></div>
   </div>
   <div class="features-grid reveal">
- 
+
     <div class="feature-card" style="border:2px solid rgba(201,168,76,0.4);background:linear-gradient(135deg,var(--white) 0%,rgba(201,168,76,0.04) 100%);">
       <div class="feature-icon">🗣️</div>
+      <h3 class="feature-title">Conversation Mode<span class="new-badge">New</span></h3>
+      <p class="feature-desc">When journaling isn't enough, talk it through. A live, spoken back-and-forth with your AI companion — you speak, it responds, it remembers. Real dialogue for the moments a blank page can't hold.</p>
+    </div>
+
+    <div class="feature-card" style="border:2px solid rgba(201,168,76,0.4);background:linear-gradient(135deg,var(--white) 0%,rgba(201,168,76,0.04) 100%);">
+      <div class="feature-icon">💻</div>
+      <h3 class="feature-title">diAry Online<span class="new-badge">New</span></h3>
+      <p class="feature-desc">Your diary, at your desk. Full text journaling, quick chat, document upload, and analytics in your browser — same account, same AI, same memory. Built for working professionals and everyone who thinks better on a real keyboard.</p>
+    </div>
+ 
+    <div class="feature-card" style="border:2px solid rgba(201,168,76,0.4);background:linear-gradient(135deg,var(--white) 0%,rgba(201,168,76,0.04) 100%);">
+      <div class="feature-icon">🎤</div>
       <h3 class="feature-title">AI Voice — 11 Distinct Voices</h3>
       <p class="feature-desc">Your AI companion doesn't just respond. It speaks. Choose from eleven voices: Aria, Nova, Sage, Luna, Eden, Marcus, Eli, Cyrus, Reign, Sterling, or Blaze, each with its own presence, tone, and emotional weight. Warm. Deep. Poetic. Yours.</p>
     </div>
@@ -447,6 +475,12 @@ function enterSite() {
       <h3 class="feature-title">Voice Journaling</h3>
       <p class="feature-desc">Tap to speak and your words are transcribed instantly using AI. Journal while walking, commuting, or anywhere life takes you.</p>
     </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <h3 class="feature-title">Text Chat</h3>
+      <p class="feature-desc">A quick, private check-in with your companion — no full entry required. For 3am thoughts, quiet spaces, and moments you need an answer instead of an echo.</p>
+    </div>
  
     <div class="feature-card">
       <div class="feature-icon">✏️</div>
@@ -456,7 +490,7 @@ function enterSite() {
  
     <div class="feature-card">
       <div class="feature-icon">📷📂</div>
-      <h3 class="feature-title">Camera & File Import</h3>
+      <h3 class="feature-title">Camera & File Import<span class="new-badge">New</span></h3>
       <p class="feature-desc">Bring your past into diAry. Snap photos of old journals, letters, notes, or documents or upload files and ZIP archives. diAry transcribes your memories into searchable entries your AI Companion can read, understand, and discuss with you.</p>
     </div>
  
@@ -469,7 +503,7 @@ function enterSite() {
     <div class="feature-card">
       <div class="feature-icon">🎭</div>
       <h3 class="feature-title">Five AI Modes</h3>
-      <p class="feature-desc">Auto mode reads your energy and adapts. Vault mode holds your secrets without judgment. Friend mode wraps you in warmth. Mirror mode reflects your thoughts back therapeutically. Insight mode digs deeper with analysis.</p>
+      <p class="feature-desc">Auto mode reads your energy and adapts. Vault mode holds your secrets without judgment. Friend mode wraps you in warmth. Mirror mode reflects your thoughts back so you can truly see them. Insight mode digs deeper with analysis.</p>
     </div>
  
     <div class="feature-card">
@@ -492,8 +526,8 @@ function enterSite() {
  
     <div class="feature-card">
       <div class="feature-icon">📷</div>
-      <h3 class="feature-title">ICE Cam Security</h3>
-      <p class="feature-desc">Unauthorized access attempts are automatically captured with a photo, timestamp, device and network details, and approximate location, then logged and sent to you as a security alert. Your diary protects itself and keeps you informed of any intrusion attempts.</p>
+      <h3 class="feature-title">ICE Cam Security<span class="new-badge">New</span></h3>
+      <p class="feature-desc">Intrusion Capture & Emergency Cam. Unauthorized access attempts are automatically captured with a photo, timestamp, device and network details, and approximate location, then logged and sent to you as a security alert. Your diary protects itself and keeps you informed of any intrusion attempts.</p>
     </div>
  
     <div class="feature-card">
@@ -516,9 +550,46 @@ function enterSite() {
  
   </div>
 </section>
- 
+
+<!-- CONVERSATION MODE SPOTLIGHT -->
+<section id="conversation-mode" style="background:var(--cream-dark);">
+  <div class="reveal" style="text-align:center;">
+    <span class="section-tag">New — Conversation Mode</span>
+    <h2 class="section-title">It listens. It thinks.<br>It talks back.</h2>
+    <p class="section-sub" style="margin:0 auto 60px;text-align:center;">A live, spoken conversation with your AI companion — a real back-and-forth that listens, thinks, and answers. Because some nights, the page isn't enough.</p>
+  </div>
+  <div class="screenshots-grid reveal" style="max-width:900px;">
+    <div class="screenshot-card">
+      <img src="diary_conversation_listening.png" alt="Conversation Mode listening" style="width:100%;display:block;">
+      <p class="screenshot-label">Listening</p>
+    </div>
+    <div class="screenshot-card">
+      <img src="diary_conversation_thinking.png" alt="Conversation Mode thinking" style="width:100%;display:block;">
+      <p class="screenshot-label">Thinking</p>
+    </div>
+    <div class="screenshot-card">
+      <img src="diary_conversation_speaking.png" alt="Conversation Mode speaking" style="width:100%;display:block;">
+      <p class="screenshot-label">Speaking</p>
+    </div>
+  </div>
+</section>
+
+<!-- diAry ONLINE -->
+<section id="diary-online">
+  <div class="reveal">
+    <span class="section-tag">New — diAry Online</span>
+    <h2 class="section-title" style="text-align:center;">Your diary,<br>at your desk</h2>
+  </div>
+  <div class="online-box reveal" style="margin-top:24px;">
+    <p style="font-size:1.15rem;font-style:italic;font-weight:500;color:var(--brown);margin-bottom:20px;">Full text journaling, quick chat, document upload, and analytics — in your browser.</p>
+    <p style="font-size:0.97rem;color:var(--brown-light);font-weight:300;line-height:1.8;margin-bottom:12px;">Same account. Same AI. Same memory. diAry online was built for the working professional stealing twelve honest minutes between calls — and for everyone who simply thinks better with a full keyboard under their hands. Nothing reduced. Nothing watered down.</p>
+    <p style="font-size:0.85rem;color:var(--brown-light);font-style:italic;margin-bottom:32px;">Voice, handwriting, Conversation Mode, and ICE Cam are available in the mobile app.</p>
+    <a href="https://app.diary.gmxquantum.com" target="_blank" class="btn-primary">Open diAry Online</a>
+  </div>
+</section>
+
 <!-- ===== PRICING ===== -->
-<section id="pricing">
+<section id="pricing" style="background:var(--cream-dark);">
   <div class="reveal">
     <span class="section-tag">Plans & Pricing</span>
     <h2 class="section-title">Start free.<br>Stay as long as you like.</h2>
@@ -535,7 +606,7 @@ function enterSite() {
       </div>
       <div style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:2px;">✦</span>
-        <p style="font-size:0.97rem;color:var(--brown-mid);font-weight:300;line-height:1.7;"><strong style="color:var(--brown);">Your first 7 days unlock everything.</strong> All entry types, the full AI companion, all five modes, voice responses, export, burn mode — zero restrictions, zero prompts.</p>
+        <p style="font-size:0.97rem;color:var(--brown-mid);font-weight:300;line-height:1.7;"><strong style="color:var(--brown);">Your first 7 days unlock everything.</strong> All six entry types, the full AI companion, all five modes, Conversation Mode, voice responses, export, burn mode — zero restrictions, zero prompts.</p>
       </div>
       <div style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:2px;">✦</span>
@@ -566,9 +637,11 @@ function enterSite() {
       <div class="pricing-price" style="font-size:1.6rem;">Free <span>/ 7 days</span></div>
       <ul class="pricing-features">
         <li>Everything — unlocked, unrestricted</li>
-        <li>All entry types (text, voice, handwriting, AI chat, camera)</li>
+        <li>All entry types (text, voice, handwriting, chat, conversation, camera & file import)</li>
         <li>Full AI companion, all 5 modes</li>
+        <li>Conversation Mode</li>
         <li>11 AI voices</li>
+        <li>diAry online for desktop</li>
         <li>Full analytics + AI reflection</li>
         <li>Export, cloud sync, burn mode</li>
         <li>Zero prompts. Zero interruptions.</li>
@@ -583,7 +656,10 @@ function enterSite() {
         <li>Everything, unlimited, forever</li>
         <li>All entry types</li>
         <li>Unlimited AI companion, all 5 modes</li>
+        <li>Conversation Mode</li>
         <li>11 AI voices</li>
+        <li>ICE Cam intrusion capture</li>
+        <li>diAry online for desktop</li>
         <li>Full analytics + AI reflection</li>
         <li>Export, cloud sync, burn mode</li>
         <li>All future features — automatically</li>
@@ -616,7 +692,7 @@ function enterSite() {
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how-it-works">
+<section id="how-it-works" style="background:var(--cream);">
   <div class="reveal">
     <span class="section-tag">Getting Started</span>
     <h2 class="section-title">Up and writing<br>in minutes</h2>
@@ -634,14 +710,14 @@ function enterSite() {
       <div class="step-num">2</div>
       <div class="step-content">
         <h3 class="step-title">Set Your Mood & Security Preferences</h3>
-        <p class="step-desc">Each time you open diAry, a mood check-in greets you. Select how you're feeling — Happy, Sad, Bored, Romantic, Naughty, Angry, Sleepy, or Sick. Then configure your biometric lock and privacy settings to your comfort level.</p>
+        <p class="step-desc">Each time you open diAry, a mood check-in greets you. Select how you're feeling from 32 nuanced emotions — Happy, Grateful, Overwhelmed, Hopeful, Reflective, and more. Then configure your biometric lock, ICE Cam, and privacy settings to your comfort level.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-content">
         <h3 class="step-title">Choose Your Journal Type</h3>
-        <p class="step-desc">Tap the + button to create a new entry. Choose between Text Journal (classic lined paper experience), Voice Journal (tap to speak), or Handwritten Journal (write or draw by hand). Each type captures your thoughts in the way that feels most natural.</p>
+        <p class="step-desc">Tap the + button to create a new entry. Choose Text Journal (classic lined paper experience), Voice Journal (tap to speak), Handwritten Journal (write or draw by hand), Text Chat (a quick check-in with your companion), Conversation Mode (a live spoken back-and-forth), or Camera & File Import (bring your old journals in). Your moment decides — diAry has all six ready.</p>
       </div>
     </div>
     <div class="step">
@@ -655,7 +731,7 @@ function enterSite() {
       <div class="step-num">5</div>
       <div class="step-content">
         <h3 class="step-title">Let Your AI Companion Respond</h3>
-        <p class="step-desc">After saving your entry, tap the AI Companion button. Choose Friend mode for emotional support, Mirror mode for therapeutic reflection, Insight mode for deeper analysis, or Auto to let diAry read your energy and respond accordingly. Your companion is always listening.</p>
+        <p class="step-desc">After saving your entry, tap the AI Companion button. Choose Friend mode for emotional support, Mirror mode to see your own thoughts reflected back, Insight mode for deeper analysis, or Auto to let diAry read your energy and respond accordingly. Prefer to talk? Switch on Conversation Mode and speak with your companion directly. It's always listening.</p>
       </div>
     </div>
     <div class="step">
@@ -712,6 +788,19 @@ function enterSite() {
   </div>
 </section>
 
+<!-- BLOG -->
+<section id="blog" style="text-align:center;">
+  <div class="reveal">
+    <span class="section-tag">The diAry Blog</span>
+    <h2 class="section-title" style="text-align:center;">Words worth<br>keeping</h2>
+  </div>
+  <div class="contact-box reveal" style="margin-top:24px;">
+    <p style="font-size:1.15rem;font-style:italic;font-weight:500;color:var(--brown);margin-bottom:20px;">Journaling guides, feature deep-dives, and honest essays from the people behind diAry.</p>
+    <p style="font-size:0.97rem;color:var(--brown-light);font-weight:300;line-height:1.8;margin-bottom:32px;">How to start journaling and actually keep going. What voice journaling changes about the way you process. Why we rewrote diAry in 29 languages instead of translating it. And personal essays about the moments that made a private space non-negotiable. New writing, regularly.</p>
+    <a href="/blog/" class="btn-primary">Read the Blog</a>
+  </div>
+</section>
+
 <!-- DOWNLOAD -->
 <section id="download">
   <div class="reveal">
@@ -733,6 +822,12 @@ function enterSite() {
         <img src="qr-apple.png" alt="Scan to download on iOS" style="width:100%;height:100%;object-fit:contain;">
       </div>
       <a href="https://apps.apple.com/us/app/diary-ai-powered-safe-space/id6764833139" class="download-btn" target="_blank">Download on App Store</a>
+    </div>
+    <div class="download-card">
+      <p class="store-name" style="font-size:1.3rem;">💻&nbsp; diAry Online</p>
+      <p class="store-sub">No download needed</p>
+      <p style="font-size:0.9rem;color:var(--brown-light);font-weight:300;max-width:220px;">Journal from any browser — same account, same AI, same memory.</p>
+      <a href="https://app.diary.gmxquantum.com" class="download-btn" target="_blank">Open in Browser</a>
     </div>
     
     <div class="download-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
@@ -901,6 +996,7 @@ function enterSite() {
     <a href="#screenshots">Screenshots</a>
     <a href="#videos">Videos</a>
     <a href="#pricing">Pricing</a>
+    <a href="#diary-online">diAry Online</a>
     <a href="/blog/">Blog</a>
     <a href="faq.html">FAQ</a>
     <a href="#privacy">Privacy Policy</a>
@@ -995,7 +1091,7 @@ reveals.forEach(el => observer.observe(el));
       "@type": "MobileApplication",
       "@id": "https://diary.gmxquantum.com/#app",
       "name": "diAry",
-      "description": "diAry is an AI-powered private journal. Write, speak, or draw your entries and an AI companion responds with warmth, reflection, or insight. Features include Ghost Mode, Burn Mode, biometric lock, mood tracking, and 11 AI voices across 29 languages. Free to download, with an optional diAry Elite subscription ($9.99/month or $79.99/year).",
+      "description": "diAry is an AI-powered private journal. Write, speak, draw, chat, or talk it through in Conversation Mode — and import old paper journals with your camera. An AI companion responds with warmth, reflection, or insight. Features include ICE Cam intrusion capture, Ghost Mode, Burn Mode, biometric lock, mood tracking, 11 AI voices across 29 languages, and diAry online for desktop browsers. Free to download, with an optional diAry Elite subscription ($9.99/month or $79.99/year).",
       "operatingSystem": "iOS, Android",
       "applicationCategory": "LifestyleApplication",
       "url": "https://diary.gmxquantum.com/",
