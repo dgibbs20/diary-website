@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Best Day One Alternative in 2026 — diAry</title>
+  <meta name="description" content="Looking for a Day One alternative? diAry offers AI-powered private journaling with voice, mood tracking, burn mode, and ghost mode. Free to start. No credit card required." />
+  <meta name="keywords" content="day one alternative, day one app alternative, best journaling app 2026, private journal app, ai journal app, diary app alternative to day one" />
+  <meta property="og:title" content="The Best Day One Alternative in 2026 — diAry" />
+  <meta property="og:description" content="Looking for a Day One alternative? diAry offers AI-powered private journaling with voice, mood tracking, burn mode, and ghost mode. Free to start." />
+  <meta property="og:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
+  <meta property="og:url" content="https://diary.gmxquantum.com/blog/day-one-alternative.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Best Day One Alternative in 2026 — diAry" />
+  <meta name="twitter:description" content="Looking for a Day One alternative? diAry is the AI-powered private journal built for people who need more than a notes app." />
+  <meta name="twitter:image" content="https://diary.gmxquantum.com/logo-transparent2.png" />
+  <link rel="canonical" href="https://diary.gmxquantum.com/blog/day-one-alternative.html" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --cream-dark: #EDE7D9;
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-dim: rgba(201,168,76,0.15);
+      --charcoal: #2C1A0E;
+      --charcoal-mid: #5C3D2A;
+      --text-body: #3A2A1D;
+      --text-muted: #8B6347;
+      --white: #FDFAF4;
+      --border: rgba(201,168,76,0.25);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      background: var(--cream);
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--charcoal);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .logo img {
+      height: 36px;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    nav ul a:hover { opacity: 1; color: var(--gold-light); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--charcoal) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      font-weight: 700;
+      opacity: 1 !important;
+      font-size: 0.82rem !important;
+      letter-spacing: 0.06em !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--charcoal);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--cream);
+      font-weight: 400;
+      line-height: 1.25;
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero .meta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── ARTICLE BODY ── */
+    article {
+      padding: 4rem 0 5rem;
+    }
+
+    article h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article h3 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      margin: 2rem 0 0.6rem;
+    }
+
+    article p { margin-bottom: 1.4rem; font-size: 1.05rem; color: var(--text-body); }
+
+    article p:first-of-type {
+      font-size: 1.15rem;
+      color: var(--charcoal-mid);
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2.5rem 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .comparison-table thead tr {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .comparison-table thead th {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+    }
+
+    .comparison-table thead th:first-child { width: 40%; }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: var(--cream-dark);
+    }
+
+    .comparison-table tbody tr:nth-child(odd) {
+      background: var(--white);
+    }
+
+    .comparison-table tbody td {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-body);
+      vertical-align: middle;
+    }
+
+    .comparison-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .check { color: #4CAF50; font-size: 1.1rem; }
+    .cross { color: #E53935; font-size: 1.1rem; }
+    .partial { color: var(--gold); font-size: 1rem; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--charcoal);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 1.8rem 2rem;
+      margin: 2.5rem 0;
+      color: var(--cream);
+    }
+
+    .callout p { color: #FDFAF4 !important; margin: 0; font-size: 1.05rem; font-style: italic; }
+
+    .callout .attribution {
+      font-style: normal;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      margin-top: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FEATURE GRID ── */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+    }
+
+    .feature-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .feature-card h4 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      background: var(--charcoal);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .cta-section .tagline {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+      border: none;
+      padding: 0;
+    }
+
+    .cta-section p {
+      color: rgba(245,240,232,0.7);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* ── BLOG NAV ── */
+    .blog-breadcrumb {
+      background: var(--cream-dark);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .blog-breadcrumb a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .blog-breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    footer img { height: 32px; margin-bottom: 1rem; opacity: 0.8; }
+
+    footer nav ul {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    footer nav ul a { font-size: 0.8rem; }
+
+    footer .copyright {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav ul { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .hero { padding: 3.5rem 1.5rem 3rem; }
+      article { padding: 2.5rem 0 3rem; }
+      .comparison-table { font-size: 0.78rem; }
+      .comparison-table thead th,
+      .comparison-table tbody td { padding: 0.7rem 0.8rem; }
+    }
+  </style>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Best Day One Alternative in 2026",
+    "description": "Looking for a Day One alternative? diAry offers AI-powered private journaling with voice, mood tracking, burn mode, and ghost mode.",
+    "author": {
+      "@type": "Person",
+      "name": "Derrick K. Gibbs-McGlaston"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "GMX Quantum LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://diary.gmxquantum.com/logo-transparent2.png"
+      }
+    },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-28",
+    "image": "https://diary.gmxquantum.com/logo-transparent2.png",
+    "url": "https://diary.gmxquantum.com/blog/day-one-alternative.html"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo" href="https://diary.gmxquantum.com/">
+      <img src="https://diary.gmxquantum.com/logo-transparent2.png" alt="diAry" />
+    </a>
+    <ul>
+      <li><a href="https://diary.gmxquantum.com/#features">Features</a></li>
+      <li><a href="https://diary.gmxquantum.com/#pricing">Pricing</a></li>
+      <li><a href="https://diary.gmxquantum.com/blog/">Blog</a></li>
+      <li><a href="https://diary.gmxquantum.com/faq.html">FAQ</a></li>
+      <li><a href="https://diary.gmxquantum.com/#download" class="nav-cta">Download Free</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="blog-breadcrumb">
+    <a href="https://diary.gmxquantum.com/">Home</a> &rsaquo;
+    <a href="https://diary.gmxquantum.com/blog/">Blog</a> &rsaquo;
+    The Best Day One Alternative in 2026
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="eyebrow">Journaling App Comparison · 2026</p>
+    <h1>The Best <em>Day One</em> Alternative<br>You Haven't Tried Yet</h1>
+    <p class="meta">By Derrick K. Gibbs-McGlaston &nbsp;·&nbsp; June 28, 2026 &nbsp;·&nbsp; 6 min read</p>
+  </div>
+
+  <!-- ARTICLE -->
+  <div class="container">
+    <article>
+
+      <p>Day One is a beautifully designed journaling app. We're not here to pretend otherwise. But over the last two years, something has quietly shifted in the journaling space — and if you're searching for a Day One alternative, you already know what it is. People want more than a place to write. They want a place that writes <em>back</em>.</p>
+
+      <p>That's the gap diAry was built to fill.</p>
+
+      <h2>Why People Leave Day One</h2>
+
+      <p>Before we get into why diAry might be the right move for you, let's be honest about what's driving people to look for alternatives in the first place. The complaints we hear most often fall into three categories.</p>
+
+      <h3>The price increased — again</h3>
+      <p>Day One moved to a subscription model and has raised prices multiple times. For what is essentially a notes app with a nice design, many users feel the value equation no longer adds up — especially when the core writing experience hasn't changed dramatically.</p>
+
+      <h3>It's still just a journal</h3>
+      <p>Day One captures your thoughts beautifully. But it doesn't respond to them. There's no AI companion reading your entry and offering reflection, insight, or just a warm acknowledgment that you were heard. In 2026, journaling apps that only store text feel like half a product.</p>
+
+      <h3>Privacy concerns with sync</h3>
+      <p>Your most private thoughts live in Day One's cloud. For many users, that's a quiet discomfort that never fully goes away — especially as AI features require more of your content to be processed externally.</p>
+
+      <h2>How diAry Compares to Day One</h2>
+
+      <table class="comparison-table" role="table" aria-label="Feature comparison between diAry and Day One">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>diAry</th>
+            <th>Day One</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Free tier (no expiry)</td>
+            <td><span class="check">✓</span> Forever free</td>
+            <td><span class="partial">~</span> Limited</td>
+          </tr>
+          <tr>
+            <td>AI companion that responds</td>
+            <td><span class="check">✓</span> 5 AI modes</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Voice journaling</td>
+            <td><span class="check">✓</span> Included in Elite</td>
+            <td><span class="check">✓</span> Included</td>
+          </tr>
+          <tr>
+            <td>AI voice responses (11 voices)</td>
+            <td><span class="check">✓</span> Unique to diAry</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Handwriting recognition (OCR)</td>
+            <td><span class="check">✓</span> Included in Elite</td>
+            <td><span class="check">✓</span> Included</td>
+          </tr>
+          <tr>
+            <td>Mood tracking & analytics</td>
+            <td><span class="check">✓</span> 32 emotions</td>
+            <td><span class="partial">~</span> Basic</td>
+          </tr>
+          <tr>
+            <td>Burn Mode (self-destructing entries)</td>
+            <td><span class="check">✓</span> Unique to diAry</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Ghost Mode (screenshot protection)</td>
+            <td><span class="check">✓</span> Unique to diAry</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>ICE Cam security alerts</td>
+            <td><span class="check">✓</span> Unique to diAry</td>
+            <td><span class="cross">✗</span> Not available</td>
+          </tr>
+          <tr>
+            <td>29 languages (culturally authored)</td>
+            <td><span class="check">✓</span> Full support</td>
+            <td><span class="partial">~</span> Basic localization</td>
+          </tr>
+          <tr>
+            <td>Monthly pricing</td>
+            <td><span class="check">✓</span> $9.99/mo</td>
+            <td><span class="partial">~</span> Higher</td>
+          </tr>
+          <tr>
+            <td>7-day full trial (no card required)</td>
+            <td><span class="check">✓</span> Yes</td>
+            <td><span class="partial">~</span> Limited trial</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What Makes diAry Different</h2>
+
+      <p>The honest answer is this: diAry was built by someone who needed it. Not a team of product managers who saw a market opportunity. One person, processing things he couldn't say out loud to anyone — and building the space he wished existed.</p>
+
+      <p>That origin shapes everything about how the app works.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="icon">🤖</span>
+          <h4>AI That Actually Responds</h4>
+          <p>Five modes: Friend, Mirror, Insight, Auto, and Vault. Your companion reads your entry and responds with warmth, reflection, or analysis — depending on what you need.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🔥</span>
+          <h4>Burn Mode</h4>
+          <p>Set entries to self-destruct after a chosen time or number of reads. Process what you need to process, then let it go permanently. No recovery. No receipts.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">👻</span>
+          <h4>Ghost Mode</h4>
+          <p>Blocks screenshots and hides your content in the app switcher. Your private thoughts stay private — even from someone holding your phone.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🎙️</span>
+          <h4>11 AI Voices</h4>
+          <p>Your companion doesn't just respond in text. It speaks — in eleven distinct voices, each with its own presence and emotional weight.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">😊</span>
+          <h4>32 Emotions & Analytics</h4>
+          <p>Track nuanced emotional states over time. Your mood patterns reveal what your daily self doesn't always notice.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🌍</span>
+          <h4>29 Languages, Culturally Authored</h4>
+          <p>Every prompt and affirmation was rewritten for the emotional truth of each language — not just translated word for word.</p>
+        </div>
+      </div>
+
+      <h2>The Privacy Question</h2>
+
+      <p>People searching for a Day One alternative often have privacy at the top of their list. Here's what diAry actually does — no marketing language, just facts.</p>
+
+      <p>Your entries are encrypted in transit and at rest using AES-256. When you use AI features, your text is sent to Anthropic's Claude API or OpenAI's Whisper API under contracts that prohibit them from training on your content. Ghost Mode blocks screenshots. ICE Cam captures unauthorized access attempts and sends you a security alert with a timestamped photo.</p>
+
+      <p>And if you want to journal without any third-party AI processing at all? Use text-only entries. Your content never leaves our servers.</p>
+
+      <div class="callout">
+        <p>"I was already journaling but I wanted to talk some things out — I was embarrassed and ashamed to say them out loud, let alone to another person. I did my first entry with voice. As I stayed and continued to chat I found myself talking with this AI like an old buddy."</p>
+        <p class="attribution">— Darby C., diAry user</p>
+      </div>
+
+      <h2>Who diAry Is For</h2>
+
+      <p>diAry isn't for everyone — and we're comfortable saying that. If you want a beautiful photo journal with location tagging and memories, Day One is genuinely excellent at that.</p>
+
+      <p>diAry is for people who need a space for the things they can't say anywhere else. The 3AM thoughts. The business idea that sounds crazy. The grief that doesn't fit in a text message. The version of yourself you're still figuring out.</p>
+
+      <p>It's for people who don't just want to write — they want to be heard.</p>
+
+      <h2>How to Switch from Day One to diAry</h2>
+
+      <p>Switching is straightforward. Day One allows you to export your entries as PDF, plain text, or JSON. diAry accepts file and document imports — you can upload your exported entries and your AI companion can read, reference, and discuss them with you.</p>
+
+      <p>Your history doesn't disappear. It follows you.</p>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <p class="tagline">Start Today — No Credit Card Required</p>
+        <h2>"I'll never tell."</h2>
+        <p>Download diAry free. Your first 7 days unlock everything — all entry types, the full AI companion, all five modes. No prompts. No restrictions.</p>
+        <div class="cta-buttons">
+          <a href="https://apps.apple.com/us/app/diary-ai-journal-companion/id6764833139" class="btn-primary">Download on iOS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.gmxquantum.diary" class="btn-primary">Download on Android</a>
+          <a href="https://diary.gmxquantum.com/#features" class="btn-secondary">See All Features</a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <nav>
+      <img src="https://diary.gmxquantum.com/logo-transparent2.png" alt="diAry" /><br />
+      <ul>
+        <li><a href="https://diary.gmxquantum.com/">Home</a></li>
+        <li><a href="https://diary.gmxquantum.com/blog/">Blog</a></li>
+        <li><a href="https://diary.gmxquantum.com/faq.html">FAQ</a></li>
+        <li><a href="https://diary.gmxquantum.com/terms.html">Terms</a></li>
+        <li><a href="https://diary.gmxquantum.com/privacy.html">Privacy</a></li>
+        <li><a href="https://diary.gmxquantum.com/#download">Download</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">© 2026 GMX Quantum LLC. All rights reserved. A GMCG Holdings Inc. company.</p>
+  </footer>
+
+</body>
+</html>
