@@ -483,5 +483,23 @@
     <p class="copyright">© 2026 GMX Quantum LLC. All rights reserved. A GMCG Holdings Inc. company.</p>
   </footer>
 
+<script>
+/* Privacy-preserving event hooks: no data is sent until an analytics provider is configured.
+   Never attach journal contents, contact details, or other sensitive user data. */
+window.diAryTrack = function(eventName, properties) {
+  if (window.dataLayer && Array.isArray(window.dataLayer)) {
+    window.dataLayer.push(Object.assign({event: eventName}, properties || {}));
+  }
+};
+document.querySelectorAll('a[href]').forEach(function(link) {
+  var url = link.getAttribute('href') || '';
+  var channel = url.includes('apps.apple.com') ? 'ios' :
+    url.includes('play.google.com') ? 'android' :
+    url.includes('app.diary.gmxquantum.com') ? 'web' : null;
+  if (channel) link.addEventListener('click', function() {
+    window.diAryTrack('acquisition_click', {destination: channel});
+  });
+});
+</script>
 </body>
 </html>
