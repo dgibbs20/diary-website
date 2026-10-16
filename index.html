@@ -346,29 +346,45 @@ footer {
 <p style="font-family:'Cormorant Garamond',serif;font-size:0.82rem;font-style:italic;font-weight:300;color:#8B6347;letter-spacing:0.06em;animation:fadeUp 1s ease 2s both;">Your private space awaits</p>
 </div>
 <script>
-// Check if user has already dismissed splash this session
-if (sessionStorage.getItem('splashDismissed') === 'true') {
-  document.getElementById('splash').style.display = 'none';
-}
+(function () {
+  var splash = document.getElementById('splash');
+  var dismissed = false;
+  var autoDismissTimer;
 
-function enterSite() {
-  var sound = document.getElementById('notify-sound');
-  sound.volume = 0.15;
-  sound.play().catch(function(error) {
-    console.log('Audio blocked:', error);
-  });
-  
-  // Mark splash as dismissed for this session
-  sessionStorage.setItem('splashDismissed', 'true');
-  
-  setTimeout(function() {
-    var splash = document.getElementById('splash');
+  function dismissSplash(playSound) {
+    if (dismissed) return;
+    dismissed = true;
+
+    clearTimeout(autoDismissTimer);
+    sessionStorage.setItem('splashDismissed', 'true');
+
+    if (playSound) {
+      var sound = document.getElementById('notify-sound');
+      sound.volume = 0.15;
+      sound.play().catch(function () {});
+    }
+
     splash.style.opacity = '0';
-    setTimeout(function() { 
-      splash.style.display = 'none'; 
+    splash.style.pointerEvents = 'none';
+
+    setTimeout(function () {
+      splash.style.display = 'none';
     }, 1200);
-  }, 800);
-}
+  }
+
+  window.enterSite = function () {
+    dismissSplash(true);
+  };
+
+  if (sessionStorage.getItem('splashDismissed') === 'true') {
+    splash.style.display = 'none';
+    dismissed = true;
+  } else {
+    autoDismissTimer = setTimeout(function () {
+      dismissSplash(false);
+    }, 3000);
+  }
+})();
 </script>
 <nav>
 <a class="nav-logo" href="#home"><img alt="diAry" src="logo-transparent2.png" style="height:145px;margin-top:40px;"/></a>
