@@ -380,9 +380,15 @@ footer {
     splash.style.display = 'none';
     dismissed = true;
   } else {
+  window.addEventListener('load', function () {
+  // Wait for the splash screen's entrance animations to finish.
+  setTimeout(function () {
+    // Now give visitors 3 full seconds to enjoy the completed splash.
     autoDismissTimer = setTimeout(function () {
       dismissSplash(false);
     }, 3000);
+  }, 3000);
+});
   }
 })();
 </script>
